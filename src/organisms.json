@@ -1,0 +1,762 @@
+{
+  "context": "Seed plants",
+  "governing_code": "ICN",
+  "includes_approximate_matches": true,
+  "includes_deprecated_taxa": false,
+  "includes_suppressed_names": false,
+  "matched_names": [
+    "abelia mosanensis",
+    "abelia grandiflora",
+    "abeliophyllum distichum",
+    "abelmoschus esculentus",
+    "abelmoschus manihot",
+    "abelmoschus moschatus",
+    "abies alba",
+    "abies koreana",
+    "abies nordmannianaach.",
+    "abies numidica",
+    "abies pinsapo",
+    "abies procera",
+    "abroma augustum",
+    "abrus precatorius",
+    "abutilon grandifolium",
+    "abutilon theophrasti",
+    "acacia karroo",
+    "acacia senegal",
+    "acaena buchananii"
+  ],
+  "results": [
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": true,
+          "matched_name": "Abelia mosanensis",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abelia mosanensis",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Zabelia mosanensis",
+            "ott_id": 425469,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abelia mosanensis",
+              "Zabelia monsanensis"
+            ],
+            "tax_sources": [
+              "ncbi:761860"
+            ],
+            "unique_name": "Zabelia mosanensis"
+          }
+        },
+        {
+          "is_approximate_match": false,
+          "is_synonym": true,
+          "matched_name": "Abelia mosanensis",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abelia mosanensis",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Zabelia tyaihyoni",
+            "ott_id": 425474,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abelia mosanensis",
+              "Abelia tyaihyoni",
+              "Abelia tyaihyoni mosanensis",
+              "Zabelia mosanensis",
+              "Zabelia tyaihyonii"
+            ],
+            "tax_sources": [
+              "ncbi:761861",
+              "gbif:3857292"
+            ],
+            "unique_name": "Zabelia tyaihyoni"
+          }
+        }
+      ],
+      "name": "abelia mosanensis"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": true,
+          "matched_name": "Abelia grandiflora",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abelia grandiflora",
+          "taxon": {
+            "flags": [
+              "hybrid"
+            ],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": true,
+            "name": "Abelia x grandiflora",
+            "ott_id": 3892281,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abelia grandiflora",
+              "Abelia rupestris grandiflora"
+            ],
+            "tax_sources": [
+              "ncbi:105883",
+              "gbif:5334278",
+              "irmng:10697262"
+            ],
+            "unique_name": "Abelia x grandiflora"
+          }
+        }
+      ],
+      "name": "abelia grandiflora"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abeliophyllum distichum",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abeliophyllum distichum",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abeliophyllum distichum",
+            "ott_id": 320380,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abeliophyllum distichum albiflorum",
+              "Abeliophyllum distichum eburneum",
+              "Abeliophyllum distichum lilacinum",
+              "Abeliophyllum distichum obtusicarpum",
+              "Abeliophyllum distichum viridicalycinum"
+            ],
+            "tax_sources": [
+              "ncbi:126358",
+              "gbif:7326165"
+            ],
+            "unique_name": "Abeliophyllum distichum"
+          }
+        }
+      ],
+      "name": "abeliophyllum distichum"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abelmoschus esculentus",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abelmoschus esculentus",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abelmoschus esculentus",
+            "ott_id": 514975,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abelmoschus bammia",
+              "Abelmoschus esculentus praecox",
+              "Abelmoschus esculentus textilis",
+              "Abelmoschus officinalis",
+              "Abelmoschus praecox",
+              "Abelmoschus tuberculatus",
+              "Hibiscus bammia",
+              "Hibiscus esculentus",
+              "Hibiscus ficifolius",
+              "Hibiscus longifolius",
+              "Hibiscus praecox"
+            ],
+            "tax_sources": [
+              "ncbi:455045",
+              "gbif:3152707",
+              "irmng:10908198"
+            ],
+            "unique_name": "Abelmoschus esculentus"
+          }
+        }
+      ],
+      "name": "abelmoschus esculentus"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abelmoschus manihot",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abelmoschus manihot",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abelmoschus manihot",
+            "ott_id": 17450,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [],
+            "tax_sources": [
+              "ncbi:183220",
+              "gbif:3152706",
+              "irmng:10460003"
+            ],
+            "unique_name": "Abelmoschus manihot"
+          }
+        }
+      ],
+      "name": "abelmoschus manihot"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abelmoschus moschatus",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abelmoschus moschatus",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abelmoschus moschatus",
+            "ott_id": 1030301,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Hibiscus abelmoschus",
+              "Hibiscus cardiophyllus",
+              "Laguna abelmoschus"
+            ],
+            "tax_sources": [
+              "ncbi:1170222",
+              "gbif:8312665",
+              "irmng:10198179",
+              "irmng:11413786"
+            ],
+            "unique_name": "Abelmoschus moschatus"
+          }
+        }
+      ],
+      "name": "abelmoschus moschatus"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abies alba",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abies alba",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abies alba",
+            "ott_id": 887363,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "? compacta",
+              "Abies alba alba",
+              "Abies alba apennina",
+              "Abies alba pardei",
+              "Abies alba pendula",
+              "Abies alba podolica",
+              "Abies alba pyramidalis",
+              "Abies argentea",
+              "Abies baldensis",
+              "Abies candicans",
+              "Abies chlorocarpa",
+              "Abies duplex",
+              "Abies excelsa",
+              "Abies miniata",
+              "Abies nobilis",
+              "Abies pardei",
+              "Abies pectinata",
+              "Abies picea",
+              "Abies taxifolia",
+              "Abies vulgaris",
+              "Picea excelsa",
+              "Picea pectinata",
+              "Picea pectinata pendula",
+              "Pinus abies",
+              "Pinus abies leioclada",
+              "Pinus abies pectinata",
+              "Pinus baldensis",
+              "Pinus heterophylla",
+              "Pinus lucida",
+              "Pinus pectinata",
+              "Pinus picea"
+            ],
+            "tax_sources": [
+              "ncbi:45372",
+              "gbif:2685484",
+              "irmng:11034791"
+            ],
+            "unique_name": "Abies alba"
+          }
+        }
+      ],
+      "name": "abies alba"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abies koreana",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abies koreana",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abies koreana",
+            "ott_id": 876314,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abies koreana nigrocarpa"
+            ],
+            "tax_sources": [
+              "ncbi:97170",
+              "gbif:2685681"
+            ],
+            "unique_name": "Abies koreana"
+          }
+        }
+      ],
+      "name": "abies koreana"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": true,
+          "is_synonym": false,
+          "matched_name": "Abies nordmanniana",
+          "nomenclature_code": "ICN",
+          "score": 0.7777777910232544,
+          "search_string": "abies nordmannianaach.",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abies nordmanniana",
+            "ott_id": 876306,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abies leioclada"
+            ],
+            "tax_sources": [
+              "ncbi:97177",
+              "gbif:2685552"
+            ],
+            "unique_name": "Abies nordmanniana"
+          }
+        }
+      ],
+      "name": "abies nordmannianaach."
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abies numidica",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abies numidica",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abies numidica",
+            "ott_id": 140066,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abies baborensis",
+              "Abies pinsapo baborensis",
+              "Abies pinsapo numidica",
+              "Picea numidica",
+              "Pinus abies africana",
+              "Pinus baborensis"
+            ],
+            "tax_sources": [
+              "ncbi:88725",
+              "gbif:2685546"
+            ],
+            "unique_name": "Abies numidica"
+          }
+        }
+      ],
+      "name": "abies numidica"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abies pinsapo",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abies pinsapo",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abies pinsapo",
+            "ott_id": 220887,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [],
+            "tax_sources": [
+              "ncbi:56046",
+              "gbif:2685464"
+            ],
+            "unique_name": "Abies pinsapo"
+          }
+        }
+      ],
+      "name": "abies pinsapo"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abies procera",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abies procera",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abies procera",
+            "ott_id": 876302,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abies nobilis",
+              "Abies nobilis prostrata",
+              "Abies nobilis robusta",
+              "Abies nobilis robustifolia",
+              "Abies procera glauca",
+              "Abies procera prostrata",
+              "Picea nobilis",
+              "Pinus nobilis",
+              "Pseudotsuga nobilis"
+            ],
+            "tax_sources": [
+              "ncbi:97175",
+              "gbif:2685308",
+              "irmng:10716886"
+            ],
+            "unique_name": "Abies procera"
+          }
+        }
+      ],
+      "name": "abies procera"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abroma augustum",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abroma augustum",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abroma augustum",
+            "ott_id": 385534,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abroma angusta",
+              "Ambroma augusta",
+              "Ambroma augustum",
+              "Theobroma augustum"
+            ],
+            "tax_sources": [
+              "ncbi:82454"
+            ],
+            "unique_name": "Abroma augustum (species in kingdom Archaeplastida)"
+          }
+        }
+      ],
+      "name": "abroma augustum"
+    },
+    {
+      "matches": [],
+      "name": "nan"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abrus precatorius",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abrus precatorius",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abrus precatorius",
+            "ott_id": 39530,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abrus abrus",
+              "Abrus cyaneus",
+              "Abrus maculatus",
+              "Abrus minor",
+              "Abrus pauciflorus",
+              "Abrus precatorius novo-guineensis",
+              "Abrus pulchellus",
+              "Abrus squamulosus",
+              "Abrus tunguensis",
+              "Glycine abrus"
+            ],
+            "tax_sources": [
+              "ncbi:3816",
+              "gbif:5348711",
+              "irmng:10170818"
+            ],
+            "unique_name": "Abrus precatorius (species in kingdom Archaeplastida)"
+          }
+        }
+      ],
+      "name": "abrus precatorius"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abutilon grandifolium",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abutilon grandifolium",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abutilon grandifolium",
+            "ott_id": 464177,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abutilon kauaiense",
+              "Abutilon molle",
+              "Abutilon sordidium",
+              "Sida grandifolia",
+              "Sida mollis"
+            ],
+            "tax_sources": [
+              "ncbi:424428",
+              "gbif:3152633",
+              "irmng:10198174"
+            ],
+            "unique_name": "Abutilon grandifolium"
+          }
+        }
+      ],
+      "name": "abutilon grandifolium"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Abutilon theophrasti",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "abutilon theophrasti",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Abutilon theophrasti",
+            "ott_id": 854500,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Abutilon abutilon",
+              "Abutilon avicennae",
+              "Abutilon avicennae chinense",
+              "Abutilon avicennae nigrum",
+              "Abutilon behrianum",
+              "Abutilon commune",
+              "Abutilon pubescens",
+              "Abutilon theophrasti chinense",
+              "Abutilon theophrasti nigrum",
+              "Abutilon tiliifolium",
+              "Abutilon vesicarium",
+              "Malva abutilon",
+              "Sida abutilifolia",
+              "Sida abutilon",
+              "Sida tenax",
+              "Sida tiliaefolia",
+              "Sida tiliifolia",
+              "Side abutila"
+            ],
+            "tax_sources": [
+              "ncbi:3631",
+              "gbif:3152614",
+              "irmng:10198173"
+            ],
+            "unique_name": "Abutilon theophrasti"
+          }
+        }
+      ],
+      "name": "abutilon theophrasti"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": true,
+          "matched_name": "Acacia karroo",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "acacia karroo",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Vachellia karroo",
+            "ott_id": 232958,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Acacia dekindtiana",
+              "Acacia karroo"
+            ],
+            "tax_sources": [
+              "ncbi:138024",
+              "gbif:3974754"
+            ],
+            "unique_name": "Vachellia karroo"
+          }
+        }
+      ],
+      "name": "acacia karroo"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": true,
+          "matched_name": "Acacia senegal",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "acacia senegal",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Senegalia senegal",
+            "ott_id": 581615,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Acacia senegal",
+              "Acacia verek",
+              "Mimosa senegal"
+            ],
+            "tax_sources": [
+              "ncbi:138043",
+              "gbif:3977346"
+            ],
+            "unique_name": "Senegalia senegal"
+          }
+        }
+      ],
+      "name": "acacia senegal"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Acaena buchananii",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "acaena buchananii",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Acaena buchananii",
+            "ott_id": 956120,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [],
+            "tax_sources": [
+              "ncbi:493338",
+              "gbif:5371189",
+              "irmng:10186303"
+            ],
+            "unique_name": "Acaena buchananii"
+          }
+        }
+      ],
+      "name": "acaena buchananii"
+    }
+  ],
+  "taxonomy": {
+    "author": "open tree of life project",
+    "name": "ott",
+    "source": "ott3.3draft1",
+    "version": "3.3",
+    "weburl": "https://tree.opentreeoflife.org/about/taxonomy-version/ott3.3"
+  },
+  "unambiguous_names": [
+    "abeliophyllum distichum",
+    "abelmoschus esculentus",
+    "abelmoschus manihot",
+    "abelmoschus moschatus",
+    "abies alba",
+    "abies koreana",
+    "abies nordmannianaach.",
+    "abies numidica",
+    "abies pinsapo",
+    "abies procera",
+    "abroma augustum",
+    "abrus precatorius",
+    "abutilon grandifolium",
+    "abutilon theophrasti",
+    "acaena buchananii"
+  ],
+  "unmatched_names": [
+    "nan"
+  ]
+}

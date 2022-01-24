@@ -1,0 +1,11 @@
+name: taxonomical-preparator
+
+channels:
+  - conda-forge
+  - anaconda
+dependencies:
+  - python
+  - pandas
+  - pip
+  - pip :
+    - opentree
