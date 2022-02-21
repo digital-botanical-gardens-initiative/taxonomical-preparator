@@ -25,13 +25,14 @@ switch_id = '9H11G243IaJTyjO'
 data_in_path = '../data/in/'
 data_out_path = '../data/out/'
 
-input_filename = 'species_list'
-filename_suffix = 'csv'
+input_filename = 'species_list_croisee'
+filename_suffix = 'tsv'
 path_to_input_file = os.path.join(data_in_path, input_filename + "." + filename_suffix)
 
 treated_filename = 'species_list_treated'
 filename_suffix = 'csv'
 path_to_treated_file = os.path.join(data_out_path, treated_filename + "." + filename_suffix)
+
 
 
 
@@ -54,18 +55,29 @@ def switch_downloader(switch_id, path_to_file):
 
     switch_url = "https://drive.switch.ch/index.php/s/"+switch_id+"/download"
 
-    cmd = 'wget '+switch_url+' -O '+path_to_file
+    cmd = 'wget '+switch_url+' -O '+ path_to_file
     subprocess.call(shlex.split(cmd))
 
 
 switch_downloader(switch_id='9H11G243IaJTyjO',
                   path_to_file=path_to_input_file)
 
+
+
+
+# Cleaning "liste croisée"
+
+# We download the file from switch
+
+switch_downloader(switch_id='5Sfm98d6NcYqMgV',
+                  path_to_file=path_to_input_file)
+
 # %% 
 # We now load the downloaded table file
 
-species_list_df = pd.read_csv(path_to_file,
-                       sep=';')
+species_list_df = pd.read_csv(path_to_input_file,
+                       sep='\t', encoding= 'unicode_escape')
+
 
 
 # We proceed to some data wrangling (here for example additional columns removal)
