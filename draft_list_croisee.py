@@ -19,13 +19,22 @@ import subprocess
 # pd.set_option('precision', 5)
 
 
+# These lines allows to make sure that we are placed at the repo directory level 
+
+from pathlib import Path
+
+p = Path(__file__).parents[0]
+print(p)
+os.chdir(p)
+
+
 # %% First we'll externalise the variables we'll use in the rest of the script
 
 switch_id = '9H11G243IaJTyjO'
 
 
-data_in_path = '../data/in/'
-data_out_path = '../data/out/'
+data_in_path = './data/in/'
+data_out_path = './data/out/'
 
 input_filename = 'species_list_croisee'
 filename_suffix = 'tsv'
@@ -35,13 +44,6 @@ treated_filename = 'species_list_treated'
 filename_suffix = 'csv'
 path_to_treated_file = os.path.join(data_out_path, treated_filename + "." + filename_suffix)
 
-
-
-
-
-
-# the feature metadata table path is generated from the base bath to the GNPS results folder
-feature_metadata_path = os.path.join(path_to_folder,'clusterinfo_summary','')
 
 
 # Actually here we also want to have acces to the GNPS data
