@@ -40,7 +40,7 @@ input_filename = 'species_list_croisee'
 filename_suffix = 'tsv'
 path_to_input_file = os.path.join(data_in_path, input_filename + "." + filename_suffix)
 
-treated_filename = 'species_list_treated'
+treated_filename = input_filename + '_treated'
 filename_suffix = 'csv'
 path_to_treated_file = os.path.join(data_out_path, treated_filename + "." + filename_suffix)
 
@@ -163,6 +163,8 @@ len(df_organism_tnrs_matched['taxon.ott_id'].unique())
 df_organism_tnrs_matched[df_organism_tnrs_matched['is_synonym'] == False]
 # %%
 
+# should be redundant with the above line ?
+
 df_organism_tnrs_matched[df_organism_tnrs_matched['matched_name'] == df_organism_tnrs_matched['taxon.name']]
 
 # %%
@@ -172,10 +174,12 @@ df_organism_tnrs_matched[df_organism_tnrs_matched['matched_name'] == df_organism
 # We thus order by matched_name and then by is_synonym status prior to returning the first row.
 
 df_organism_tnrs_matched.sort_values(['search_string', 'is_synonym'], axis = 0, inplace = True)
+
+
 df_organism_tnrs_matched_unique = df_organism_tnrs_matched.drop_duplicates('search_string', keep = 'first')
 
 # both df are finally merged
-merged_df = pd.merge(species_list_df, df_organism_tnrs_matched_unique, how='left', left_on='cleaned_sp', right_on='search_string', indicator=True)
+merged_df = pd.merge(species_list_df, df_organism_tnrs_matched_unique, how='left', left_on=org_column_header, right_on='search_string', indicator=True)
 
 
 merged_df.to_csv(path_to_treated_file, sep = ',', index = None)
@@ -214,18 +218,19 @@ for i in ott_list:
 
 # %%
 
+taxon_info_filename = data_out_path + input_filename + '_taxon_info.json'
 
 tl = []
 
 for i in taxon_info[:22]:
-    with open('taxon_info.json', 'w') as out:
+    with open(taxon_info_filename, 'w') as out:
         tl.append(i.response_dict)
         yo = json.dumps(tl)
         out.write('{}\n'.format(yo))
 
 # %%
 
-with open("taxon_info.json") as tmpfile:
+with open(taxon_info_filename) as tmpfile:
         jsondic = json.loads(tmpfile.read())
 
 df = json_normalize(jsondic)
