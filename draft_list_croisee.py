@@ -11,10 +11,12 @@ import subprocess
 
 
 
+# Display option for pandas (optionnel)
+# apparently buggy on Windows comment/uncomment if needed
 
-pd.set_option('display.max_rows', 60)
-pd.set_option("max_colwidth", 400)
-pd.set_option('precision', 5)
+# pd.set_option('display.max_rows', 60)
+# pd.set_option("max_colwidth", 400)
+# pd.set_option('precision', 5)
 
 
 # %% First we'll externalise the variables we'll use in the rest of the script
