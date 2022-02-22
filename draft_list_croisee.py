@@ -110,6 +110,7 @@ print("%s unique organism have been selected from the metadata table." % len_org
 organisms_tnrs_matched = OT.tnrs_match(organisms, context_name=None, do_approximate_matching=True, include_suppressed=False)
 
 # %%
+# The above results are saved as a json file 
 
 organisms_tnrs_matched_filename = data_out_path + input_filename + '_organisms.json'
 
@@ -119,11 +120,14 @@ with open(organisms_tnrs_matched_filename, 'w') as out:
 
 
 # %%
+# we repopne the json
+
 with open(organisms_tnrs_matched_filename) as tmpfile:
         jsondic = json.loads(tmpfile.read())
 
 json_normalize(jsondic)
 # %%
+# and here we normalize the json and output two  differents df for matched and unmatched results
 
 df_organism_tnrs_matched = json_normalize(jsondic,
                record_path=['results', 'matches']
