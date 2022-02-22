@@ -88,14 +88,16 @@ species_list_df = pd.read_csv(path_to_input_file,
 # %%
 # Set the lowertax columns header
 
+# define here the header for the species
 org_column_header = 'Inventaire FRIBG'
 
 
 species_list_df[org_column_header].dropna(inplace = True)
 species_list_df[org_column_header]= species_list_df[org_column_header].str.lower()
-# lets try to remove sp. in the fields
-species_list_df[org_column_header] = species_list_df[org_column_header].str.replace(' sp' , '')
-species_list_df[org_column_header] = species_list_df[org_column_header].str.replace(' x ' , ' ')
+# We remove sp. and x (varietas) in the fields Normally should not be required in this case
+species_list_df[org_column_header] = species_list_df[org_column_header].str.replace(r' sp' , '', regex=True)
+species_list_df[org_column_header] = species_list_df[org_column_header].str.replace(r' x ' , ' ', regex=True)
+species_list_df[org_column_header] = species_list_df[org_column_header].str.replace(r' x$' , '', regex=True)
 
 
 organisms = species_list_df[org_column_header].unique()
@@ -109,7 +111,7 @@ organisms_tnrs_matched = OT.tnrs_match(organisms, context_name=None, do_approxim
 
 # %%
 
-organisms_tnrs_matched_filename = input_filename + '_organisms.json'
+organisms_tnrs_matched_filename = data_out_path + input_filename + '_organisms.json'
 
 with open(organisms_tnrs_matched_filename, 'w') as out:
     sf = json.dumps(organisms_tnrs_matched.response_dict, indent=2, sort_keys=True)
