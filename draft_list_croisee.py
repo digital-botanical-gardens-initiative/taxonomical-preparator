@@ -182,6 +182,9 @@ df_organism_tnrs_matched_unique = df_organism_tnrs_matched.drop_duplicates('sear
 merged_df = pd.merge(species_list_df, df_organism_tnrs_matched_unique, how='left', left_on=org_column_header, right_on='search_string', indicator=True)
 
 
+merged_df.drop_duplicates(subset=['Inventaire FRIBG', 'matched_name', 'taxon.ott_id'], keep='first', inplace=True, ignore_index=False)
+
+
 merged_df.to_csv(path_to_treated_file, sep = ',', index = None)
 
 
