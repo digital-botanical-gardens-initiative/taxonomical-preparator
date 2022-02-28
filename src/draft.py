@@ -11,19 +11,13 @@ import subprocess
 
 
 
-
-pd.set_option('display.max_rows', 60)
-pd.set_option("max_colwidth", 400)
-pd.set_option('precision', 5)
-
-
 # %% First we'll externalise the variables we'll use in the rest of the script
 
 switch_id = '9H11G243IaJTyjO'
 
 
-data_in_path = '../data/in/'
-data_out_path = '../data/out/'
+data_in_path = './data/in/'
+data_out_path = './data/out/'
 
 input_filename = 'species_list_croisee'
 filename_suffix = 'tsv'

@@ -222,7 +222,7 @@ taxon_info_filename = data_out_path + input_filename + '_taxon_info.json'
 
 tl = []
 
-for i in taxon_info[:22]:
+for i in taxon_info:
     with open(taxon_info_filename, 'w') as out:
         tl.append(i.response_dict)
         yo = json.dumps(tl)
