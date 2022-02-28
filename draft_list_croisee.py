@@ -181,9 +181,11 @@ df_organism_tnrs_matched_unique = df_organism_tnrs_matched.drop_duplicates('sear
 # both df are finally merged
 merged_df = pd.merge(species_list_df, df_organism_tnrs_matched_unique, how='left', left_on=org_column_header, right_on='search_string', indicator=True)
 
-
+# Duplicate are droppes
 merged_df.drop_duplicates(subset=['Inventaire FRIBG', 'matched_name', 'taxon.ott_id'], keep='first', inplace=True, ignore_index=False)
+# and nan also
 
+merged_df.dropna(subset=['matched_name'], inplace = True)
 
 merged_df.to_csv(path_to_treated_file, sep = ',', index = None)
 
@@ -244,7 +246,7 @@ df = json_normalize(jsondic)
 
 df_tax_lineage = json_normalize(jsondic,
                record_path=['lineage'],
-               meta = ['ott_id', 'unique_name'],
+               meta = ['ott_id', 'unique_name', 'flags', 'rank'],
                record_prefix='sub_',
                errors='ignore'
                )
@@ -266,12 +268,33 @@ df_tax_lineage_filtered_flat = pd.merge(df_tax_lineage_filtered_flat, df_tax_lin
 
 df_tax_lineage_filtered_flat.drop_duplicates(subset = ['ott_id', 'unique_name'], inplace = True)
 
+df_tax_lineage_filtered_flat.columns
+
 # %%
 # we keep the fields of interest
 
-df_tax_lineage_filtered_flat[['ott_id', 'kingdom', 'phylum',
-                              'class', 'order', 'family', 'genus', 'unique_name']]
+beh = df_tax_lineage_filtered_flat[['ott_id', 'kingdom', 'phylum',
+                              'class', 'order', 'family', 'genus', 'species', 'unique_name']]
 
+# Testing here a row export as text files (for dendron loading)
+# found https://stackoverflow.com/a/28377334
+
+for x in beh.head(10).iterrows():
+    #iterrows returns a tuple per record whihc you can unpack
+    # X[0] is the index
+    # X[1] is a tuple of the rows values so X[1][0] is the value of the first column etc.
+    pd.DataFrame([x[1][0]]).to_csv(str(x[1][1])+".txt", header=False, index=False)
+
+beh.head(10).iterrows()[1]
+
+
+data_out_path_md = data_out_path + 'md/'
+
+for x in beh.head(100).iterrows():
+    #iterrows returns a tuple per record whihc you can unpack
+    # X[0] is the index
+    # X[1] is a tuple of the rows values so X[1][0] is the value of the first column etc.
+    pd.DataFrame([x[1][0]]).to_csv(data_out_path_md + ".".join([str(x[1][1]), str(x[1][2]), str(x[1][3]), str(x[1][4]), str(x[1][5]), str(x[1][6]), str(x[1][7]), str(x[1][8])]) +".md", header=False, index=False)
 
 
 # We now rename our columns of interest
