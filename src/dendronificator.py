@@ -75,7 +75,10 @@ import pathlib
 rootdir = pathlib.Path('./data/out/')
 
 
-report_per_date = input_df.apply(lambda x: rootdir / 'report_per_date' / x['organism_otol_kingdom'] / 'Users' / x['organism_otol_genus'] / f"{x['organism_otol_species']}.csv", axis='columns')
+report_per_date = input_df.apply(lambda x: rootdir / str(x['organism_otol_kingdom']) / str(x['organism_otol_genus']) / f"{x['organism_otol_species']}.csv", axis='columns')
+
+input_df.apply(lambda x: rootdir / 'report_per_date' / str(x['organism_otol_kingdom']), axis='columns')
+
 
 for csvfile, data in df.groupby(report_per_date):
     csvfile.parent.mkdir(parents=True, exist_ok=True)
