@@ -37,7 +37,6 @@ treated_taxo_filename = input_filename + '_treated_upper_taxo'
 filename_suffix = 'csv'
 path_to_treated_taxo_file = os.path.join(data_out_path, treated_taxo_filename + "." + filename_suffix)
 
-
 merged_filename = input_filename + '_final'
 filename_suffix = 'csv'
 path_to_treated_merged_file = os.path.join(data_out_path, merged_filename + "." + filename_suffix)

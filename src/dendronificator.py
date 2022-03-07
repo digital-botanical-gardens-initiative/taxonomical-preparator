@@ -1,3 +1,41 @@
+
+# Loading required libs
+
+import pandas as pd
+import os
+import sys
+from pathlib import Path
+
+
+
+p = Path(__file__).parents[0]
+print(p)
+os.chdir(p)
+
+
+
+# defining the paths
+
+data_in_path = './data/in/'
+data_out_path = './data/out/'
+
+input_filename = 'species_list_croisee_final'
+filename_suffix = 'csv'
+path_to_input_file = os.path.join(data_out_path, input_filename + "." + filename_suffix)
+
+
+
+# Loading the df
+
+input_df = pd.read_csv(path_to_input_file,
+                       sep=',', encoding= 'unicode_escape')
+
+
+# We want to generate a set of empty text files appropriately formatted 
+# so that they will be later on taken by Dendron and will reflect the taxonomy
+# See markdown import 
+
+
 # Testing here a row export as text files (for dendron loading)
 # found https://stackoverflow.com/a/28377334
 
