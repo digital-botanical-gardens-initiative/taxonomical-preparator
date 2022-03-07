@@ -44,6 +44,16 @@ treated_filename = input_filename + '_treated'
 filename_suffix = 'csv'
 path_to_treated_file = os.path.join(data_out_path, treated_filename + "." + filename_suffix)
 
+taxo_filename = input_filename + '_upper_taxo'
+filename_suffix = 'csv'
+path_to_taxo_file = os.path.join(data_out_path, taxo_filename + "." + filename_suffix)
+
+
+treated_taxo_filename = input_filename + '_treated_upper_taxo'
+filename_suffix = 'csv'
+path_to_treated_taxo_file = os.path.join(data_out_path, treated_taxo_filename + "." + filename_suffix)
+
+
 
 
 # Actually here we also want to have acces to the GNPS data
@@ -273,61 +283,60 @@ df_tax_lineage_filtered_flat.columns
 # %%
 # we keep the fields of interest
 
-beh = df_tax_lineage_filtered_flat[['ott_id', 'kingdom', 'phylum',
+sub_df = df_tax_lineage_filtered_flat[['ott_id', 'kingdom', 'phylum',
                               'class', 'order', 'family', 'genus', 'species', 'unique_name']]
 
-# Testing here a row export as text files (for dendron loading)
-# found https://stackoverflow.com/a/28377334
-
-for x in beh.head(10).iterrows():
-    #iterrows returns a tuple per record whihc you can unpack
-    # X[0] is the index
-    # X[1] is a tuple of the rows values so X[1][0] is the value of the first column etc.
-    pd.DataFrame([x[1][0]]).to_csv(str(x[1][1])+".txt", header=False, index=False)
-
-beh.head(10).iterrows()[1]
+sub_df.drop_duplicates(keep='first', inplace = True)
 
 
-data_out_path_md = data_out_path + 'md/'
+# Here we observe that we loose the information concerning the rank of the lowest taxon.
+# we actually can fetch it back by merging via ott_id with the initial df
 
-for x in beh.head(100).iterrows():
-    #iterrows returns a tuple per record whihc you can unpack
-    # X[0] is the index
-    # X[1] is a tuple of the rows values so X[1][0] is the value of the first column etc.
-    pd.DataFrame([x[1][0]]).to_csv(data_out_path_md + ".".join([str(x[1][1]), str(x[1][2]), str(x[1][3]), str(x[1][4]), str(x[1][5]), str(x[1][6]), str(x[1][7]), str(x[1][8])]) +".md", header=False, index=False)
+# Since we get a TypeError: unhashable type: 'list' when trying to drop duplicate on the subsetted df we first need to convert the flags
+# columns to a tuple (which is hashable)
 
-
-This should be better https://stackoverflow.com/a/68349231
+df_tax_lineage_filtered["flags_tuple"] = df_tax_lineage_filtered['flags'].apply(lambda x: tuple(x))
 
 
+df_tax_lineage_filtered_sub = df_tax_lineage_filtered.drop_duplicates(subset=['ott_id', 'flags_tuple', 'rank'], keep='first', ignore_index=False)
+
+
+
+merged = pd.merge(sub_df, df_tax_lineage_filtered_sub[['ott_id', 'flags', 'rank']], how='inner', on='ott_id')
+
+
+merged.columns
 
 # We now rename our columns of interest
 
-renaming_dict = {'kingdom': 'query_otol_kingdom',
-                 'phylum': 'query_otol_phylum',
-                 'class': 'query_otol_class',
-                 'order': 'query_otol_order',
-                 'family': 'query_otol_family',
-                 'genus': 'query_otol_genus',
-                 'unique_name': 'query_otol_species'}
+renaming_dict = {'kingdom': 'organism_otol_kingdom',
+                 'phylum': 'organism_otol_phylum',
+                 'class': 'organism_otol_class',
+                 'order': 'organism_otol_order',
+                 'family': 'organism_otol_family',
+                 'genus': 'organism_otol_genus',
+                 'species': 'organism_otol_species',
+                 'unique_name': 'organism_otol_unique_name'}
 
 
-df_tax_lineage_filtered_flat.rename(columns=renaming_dict, inplace=True)
+merged.rename(columns=renaming_dict, inplace=True)
 
-# We select columns of interest 
+merged.to_csv(path_to_taxo_file, sep = ',', index = None)
 
-cols_to_keep = ['ott_id',
-                'query_otol_kingdom',
-                'query_otol_phylum',
-                'query_otol_class',
-                'query_otol_order',
-                'query_otol_family',
-                'query_otol_genus',
-                'query_otol_species']
 
-df_tax_lineage_filtered_flat = df_tax_lineage_filtered_flat[cols_to_keep]
+# We open back the treated file
+
+species_list_treated = pd.read_csv(path_to_treated_file,
+                       sep=',', encoding= 'unicode_escape')
 
 
 # We merge this back with the samplemetadata only if we have an ott.id in the merged df 
 
-samples_metadata = pd.merge(merged_df[pd.notnull(merged_df['taxon.ott_id'])], df_tax_lineage_filtered_flat, how='left', left_on='taxon.ott_id', right_on='ott_id' )
+species_list_treated_upper_taxo = pd.merge(species_list_treated, merged, how='left', left_on='taxon.ott_id', right_on='ott_id' )
+
+
+# We keep the resulting file : 
+
+species_list_treated_upper_taxo.to_csv(path_to_treated_taxo_file, sep = ',', index = None)
+
+

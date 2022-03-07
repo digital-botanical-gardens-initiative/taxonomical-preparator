@@ -28,7 +28,17 @@ filename_suffix = 'csv'
 path_to_treated_file = os.path.join(data_out_path, treated_filename + "." + filename_suffix)
 
 
-merged_filename = input_filename + '_treated_merged'
+fuzzy_matched_filename = input_filename + '_fuzzy_matched'
+filename_suffix = 'csv'
+path_to_fuzzy_matched_file = os.path.join(data_out_path, fuzzy_matched_filename + "." + filename_suffix)
+
+
+treated_taxo_filename = input_filename + '_treated_upper_taxo'
+filename_suffix = 'csv'
+path_to_treated_taxo_file = os.path.join(data_out_path, treated_taxo_filename + "." + filename_suffix)
+
+
+merged_filename = input_filename + '_final'
 filename_suffix = 'csv'
 path_to_treated_merged_file = os.path.join(data_out_path, merged_filename + "." + filename_suffix)
 
@@ -87,11 +97,6 @@ list1 = list(dict.fromkeys(list1))
 list2 = list(dict.fromkeys(list2))
 
 
-  
-# taking the threshold as 82
-threshold = 82
-
-
 # iterating through list1 to extract 
 # it's closest match from list2
 for i in tqdm(list2):
@@ -101,7 +106,7 @@ for i in tqdm(list2):
 
 fuzzy_matched_df = pd.DataFrame(mat1)
 
-fuzzy_matched_df_backup = fuzzy_matched_df
+
 
 
 # We use this dirty trick to expand the list of tuples in the results to column to two different columns: 
@@ -130,13 +135,23 @@ fuzzy_matched_unique = fuzzy_matched_df.drop_duplicates('idTaxon', keep = 'first
 
 
 
+fuzzy_matched_unique.to_csv(path_to_fuzzy_matched_file, sep = ',', index = None)
+
+
+
 # We now proceed to df joins to fetch back the original metadata
 
 merged_df = pd.merge(species_list_input, fuzzy_matched_unique, how='left', left_on='idTaxon', right_on='idTaxon')
 
 
+# We open back the treated file
 
-merged_df_all = pd.merge(merged_df, species_list_treated, how='left', left_on='matched_name', right_on='matched_name')
+species_list_treated_taxo = pd.read_csv(path_to_treated_taxo_file,
+                       sep=',', encoding= 'unicode_escape')
+
+
+
+merged_df_all = pd.merge(merged_df, species_list_treated_taxo, how='left', left_on='matched_name', right_on='matched_name')
 
 
 # We now output the cleaned table 
