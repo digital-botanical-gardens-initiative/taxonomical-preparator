@@ -39,22 +39,46 @@ input_df = pd.read_csv(path_to_input_file,
 # Testing here a row export as text files (for dendron loading)
 # found https://stackoverflow.com/a/28377334
 
-for x in beh.head(10).iterrows():
-    #iterrows returns a tuple per record whihc you can unpack
-    # X[0] is the index
-    # X[1] is a tuple of the rows values so X[1][0] is the value of the first column etc.
-    pd.DataFrame([x[1][0]]).to_csv(str(x[1][1])+".txt", header=False, index=False)
+# for x in beh.head(10).iterrows():
+#     #iterrows returns a tuple per record whihc you can unpack
+#     # X[0] is the index
+#     # X[1] is a tuple of the rows values so X[1][0] is the value of the first column etc.
+#     pd.DataFrame([x[1][0]]).to_csv(str(x[1][1])+".txt", header=False, index=False)
 
-beh.head(10).iterrows()[1]
-
-
-data_out_path_md = data_out_path + 'md/'
-
-for x in beh.head(100).iterrows():
-    #iterrows returns a tuple per record whihc you can unpack
-    # X[0] is the index
-    # X[1] is a tuple of the rows values so X[1][0] is the value of the first column etc.
-    pd.DataFrame([x[1][0]]).to_csv(data_out_path_md + ".".join([str(x[1][1]), str(x[1][2]), str(x[1][3]), str(x[1][4]), str(x[1][5]), str(x[1][6]), str(x[1][7]), str(x[1][8])]) +".md", header=False, index=False)
+# beh.head(10).iterrows()[1]
 
 
-This should be better https://stackoverflow.com/a/68349231
+# data_out_path_md = data_out_path + 'md/'
+
+# for x in beh.head(100).iterrows():
+#     #iterrows returns a tuple per record whihc you can unpack
+#     # X[0] is the index
+#     # X[1] is a tuple of the rows values so X[1][0] is the value of the first column etc.
+#     pd.DataFrame([x[1][0]]).to_csv(data_out_path_md + ".".join([str(x[1][1]), str(x[1][2]), str(x[1][3]), str(x[1][4]), str(x[1][5]), str(x[1][6]), str(x[1][7]), str(x[1][8])]) +".md", header=False, index=False)
+
+
+# This should be better https://stackoverflow.com/a/68349231
+
+
+dstdir = './data/out/'
+
+input_df['organism_otol_kingdom']
+
+for x,y in input_df.groupby('ott_id')['organism_otol_kingdom'].head(10):
+    print(x,y)
+    os.path.join(dstdir, input_df['organism_otol_kingdom'])
+
+
+
+import pathlib
+
+rootdir = pathlib.Path('./data/out/')
+
+
+report_per_date = input_df.apply(lambda x: rootdir / 'report_per_date' / x['organism_otol_kingdom'] / 'Users' / x['organism_otol_genus'] / f"{x['organism_otol_species']}.csv", axis='columns')
+
+for csvfile, data in df.groupby(report_per_date):
+    csvfile.parent.mkdir(parents=True, exist_ok=True)
+    data.to_csv(csvfile, index=False) 
+
+    
