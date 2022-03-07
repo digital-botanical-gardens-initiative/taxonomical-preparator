@@ -4,6 +4,7 @@
 import pandas as pd
 import os
 import sys
+import pathlib
 from pathlib import Path
 
 
@@ -36,52 +37,36 @@ input_df = pd.read_csv(path_to_input_file,
 # See markdown import 
 
 
-# Testing here a row export as text files (for dendron loading)
-# found https://stackoverflow.com/a/28377334
-
-# for x in beh.head(10).iterrows():
-#     #iterrows returns a tuple per record whihc you can unpack
-#     # X[0] is the index
-#     # X[1] is a tuple of the rows values so X[1][0] is the value of the first column etc.
-#     pd.DataFrame([x[1][0]]).to_csv(str(x[1][1])+".txt", header=False, index=False)
-
-# beh.head(10).iterrows()[1]
-
-
-# data_out_path_md = data_out_path + 'md/'
-
-# for x in beh.head(100).iterrows():
-#     #iterrows returns a tuple per record whihc you can unpack
-#     # X[0] is the index
-#     # X[1] is a tuple of the rows values so X[1][0] is the value of the first column etc.
-#     pd.DataFrame([x[1][0]]).to_csv(data_out_path_md + ".".join([str(x[1][1]), str(x[1][2]), str(x[1][3]), str(x[1][4]), str(x[1][5]), str(x[1][6]), str(x[1][7]), str(x[1][8])]) +".md", header=False, index=False)
-
-
 # This should be better https://stackoverflow.com/a/68349231
 
 
-dstdir = './data/out/'
+input_df.columns
 
-input_df['organism_otol_kingdom']
+input_df = input_df.head(100)
 
-for x,y in input_df.groupby('ott_id')['organism_otol_kingdom'].head(10):
-    print(x,y)
-    os.path.join(dstdir, input_df['organism_otol_kingdom'])
+input_df
 
-
-
-import pathlib
-
-rootdir = pathlib.Path('./data/out/')
+rootdir = pathlib.Path('./data/out/taxo')
 
 
-report_per_date = input_df.apply(lambda x: rootdir / str(x['organism_otol_kingdom']) / str(x['organism_otol_genus']) / f"{x['organism_otol_species']}.csv", axis='columns')
+taxo_folder = input_df.apply(lambda x: rootdir /
+                                 str(x['organism_otol_kingdom']) /
+                                 str(x['organism_otol_phylum']) /
+                                 str(x['organism_otol_class']) /
+                                 str(x['organism_otol_order']) /
+                                 str(x['organism_otol_family']) /
+                                 str(x['organism_otol_genus']) /
+                                 str(x['organism_otol_species']) /
+                                 f"{x['organism_otol_unique_name']}.md", axis='columns')
 
-input_df.apply(lambda x: rootdir / 'report_per_date' / str(x['organism_otol_kingdom']), axis='columns')
 
-
-for csvfile, data in df.groupby(report_per_date):
+for csvfile, data in input_df.groupby(taxo_folder):
     csvfile.parent.mkdir(parents=True, exist_ok=True)
-    data.to_csv(csvfile, index=False) 
+    # data.to_csv(csvfile, index=False)
+    ott_id = str(data['ott_id'].values)
+    print(ott_id)
+    # print(data['ott_id'])
+    # with open(csvfile, "w") as text_file:
+    #     print(f"Check OTOL tree here: https://tree.opentreeoflife.org/opentree/argus/opentree13.4@ott{ott_id}", file=text_file)
 
     
