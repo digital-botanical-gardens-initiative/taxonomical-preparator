@@ -28,6 +28,10 @@ filename_suffix = 'csv'
 path_to_treated_file = os.path.join(data_out_path, treated_filename + "." + filename_suffix)
 
 
+merged_filename = input_filename + '_treated_merged'
+filename_suffix = 'csv'
+path_to_treated_merged_file = os.path.join(data_out_path, merged_filename + "." + filename_suffix)
+
 
 # These lines allows to make sure that we are placed at the repo directory level 
 
@@ -86,16 +90,19 @@ list2 = list(dict.fromkeys(list2))
   
 # taking the threshold as 82
 threshold = 82
-  
+
+
 # iterating through list1 to extract 
 # it's closest match from list2
 for i in tqdm(list2):
     mat1.append((i, process.extract(i, list1, limit=1)))
 
 # In fact the above line could be chunked and sent in parralel
-fuzzy_matched_df_backup = fuzzy_matched_df
 
 fuzzy_matched_df = pd.DataFrame(mat1)
+
+fuzzy_matched_df_backup = fuzzy_matched_df
+
 
 # We use this dirty trick to expand the list of tuples in the results to column to two different columns: 
 # see https://stackoverflow.com/questions/64702112/panda-expand-columns-with-list-into-multiple-columns
@@ -132,4 +139,8 @@ merged_df = pd.merge(species_list_input, fuzzy_matched_unique, how='left', left_
 merged_df_all = pd.merge(merged_df, species_list_treated, how='left', left_on='matched_name', right_on='matched_name')
 
 
+# We now output the cleaned table 
+
+
+merged_df_all.to_csv(path_to_treated_merged_file, sep = ',', index = None)
 

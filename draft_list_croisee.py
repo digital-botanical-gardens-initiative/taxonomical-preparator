@@ -297,6 +297,10 @@ for x in beh.head(100).iterrows():
     pd.DataFrame([x[1][0]]).to_csv(data_out_path_md + ".".join([str(x[1][1]), str(x[1][2]), str(x[1][3]), str(x[1][4]), str(x[1][5]), str(x[1][6]), str(x[1][7]), str(x[1][8])]) +".md", header=False, index=False)
 
 
+This should be better https://stackoverflow.com/a/68349231
+
+
+
 # We now rename our columns of interest
 
 renaming_dict = {'kingdom': 'query_otol_kingdom',
