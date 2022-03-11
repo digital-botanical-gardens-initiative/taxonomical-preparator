@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 
-p = Path(__file__).parents[0]
+p = Path(__file__).parents[1]
 print(p)
 os.chdir(p)
 
@@ -44,7 +44,7 @@ input_df.columns
 
 input_df = input_df.head(100)
 
-input_df
+type(input_df.columns)
 
 rootdir = pathlib.Path('./data/out/taxo')
 
@@ -59,14 +59,55 @@ taxo_folder = input_df.apply(lambda x: rootdir /
                                  str(x['organism_otol_species']) /
                                  f"{x['organism_otol_unique_name']}.md", axis='columns')
 
+taxo_folder.drop_duplicates(keep='first', inplace=True)
 
 for csvfile, data in input_df.groupby(taxo_folder):
     csvfile.parent.mkdir(parents=True, exist_ok=True)
     # data.to_csv(csvfile, index=False)
-    ott_id = str(data['ott_id'].values)
+    ott_id = str(int(data['ott_id'].values))
+    unique_name = str(
+        data['organism_otol_unique_name'].values[0]).replace(' ', '_')
     print(ott_id)
+    print(unique_name)
     # print(data['ott_id'])
     # with open(csvfile, "w") as text_file:
     #     print(f"Check OTOL tree here: https://tree.opentreeoflife.org/opentree/argus/opentree13.4@ott{ott_id}", file=text_file)
+    #     print(f"\n", file=text_file)
+    #     print(f"Check Wikipedia entry here: https://en.wikipedia.org/wiki/{unique_name}", file=text_file)
+    otol_block = f'''
+<html>
+    <body>
+    <iframe src="https://tree.opentreeoflife.org/opentree/argus/opentree13.4@ott{ott_id}"
+    width="800" height="400" frameborder="0" allowfullscreen> </iframe>
+    </body>
+</html>
+    '''
+    wikipedia_block = f'''
+<html>
+    <body>
+    <iframe src="https://en.wikipedia.org/wiki/{unique_name}"
+    width="800" height="400" frameborder="0" allowfullscreen> </iframe>
+    </body>
+</html>
+    '''
+    otol_link = f'Direct link to OTOL entry: https://tree.opentreeoflife.org/opentree/argus/opentree13.4@ott{ott_id}'
+    wikipedia_link = f'Direct link to Wikipedia entry: https://en.wikipedia.org/wiki/{unique_name}'
+
+    with open(csvfile, "w") as text_file:
+        print(f'This is the page dedicated to **{unique_name}**', file=text_file)
+        print(f'\n', file=text_file)
+        print(otol_link, file=text_file)
+        print(f'\n', file=text_file)
+        print(otol_block, file=text_file)
+        print(f'\n', file=text_file)
+        print(wikipedia_link, file=text_file)
+        print(f'\n', file=text_file)
+        print(wikipedia_block, file=text_file)
+
+### We well check into formatted string literal to encode this
+
+# https://stackoverflow.com/a/45624514/4908629
+
+
 
     
