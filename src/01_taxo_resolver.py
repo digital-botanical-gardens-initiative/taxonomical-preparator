@@ -276,10 +276,18 @@ df_tax_lineage_filtered_flat_ott_ids = df_tax_lineage_filtered.pivot(index='ott_
 
 df_tax_lineage_filtered_flat_ott_ids = df_tax_lineage_filtered_flat_ott_ids.add_suffix('_ott_id')
 
+# We return all ott_id as int
+
+df_tax_lineage_filtered_flat_ott_ids = df_tax_lineage_filtered_flat_ott_ids.astype('Int64')
+
+
 # %%
 # Here we actually also want the lowertaxon (species usually) name
 
 df_tax_lineage_filtered_flat = pd.merge(df_tax_lineage_filtered_flat, df_tax_lineage_filtered[['ott_id', 'unique_name']], how='left', on='ott_id' )
+
+
+
 
 #Despite the left join ott_id are duplicated 
 
@@ -287,11 +295,31 @@ df_tax_lineage_filtered_flat.drop_duplicates(subset = ['ott_id', 'unique_name'],
 
 df_tax_lineage_filtered_flat.columns
 
+
+# %%
+# And here we add the df containing the ott_ids for each upper taxo levels
+
+
+df_tax_lineage_filtered_flat_full =  pd.merge(df_tax_lineage_filtered_flat, df_tax_lineage_filtered_flat_ott_ids, how='left', on='ott_id' )
+
+
+df_tax_lineage_filtered_flat_full.columns
+
+
+
+
+
 # %%
 # we keep the fields of interest
 
-sub_df = df_tax_lineage_filtered_flat[['ott_id', 'kingdom', 'phylum',
-                              'class', 'order', 'family', 'genus', 'species', 'unique_name']]
+# sub_df = df_tax_lineage_filtered_flat[['ott_id', 'kingdom', 'phylum',
+#                               'class', 'order', 'family', 'genus', 'species', 'unique_name']]
+
+sub_df = df_tax_lineage_filtered_flat_full[['ott_id', 'kingdom', 'phylum', 'class', 'order', 'family', 'genus',
+                                       'species', 'unique_name', 'kingdom_ott_id', 'phylum_ott_id', 'class_ott_id',
+                                       'order_ott_id', 'family_ott_id', 'genus_ott_id', 'species_ott_id']
+                                      ]
+
 
 sub_df.drop_duplicates(keep='first', inplace = True)
 
@@ -323,7 +351,15 @@ renaming_dict = {'kingdom': 'organism_otol_kingdom',
                  'family': 'organism_otol_family',
                  'genus': 'organism_otol_genus',
                  'species': 'organism_otol_species',
-                 'unique_name': 'organism_otol_unique_name'}
+                 'unique_name': 'organism_otol_unique_name',
+                 'kingdom_ott_id': 'organism_otol_kingdom_ott_id_ott_id',
+                 'phylum_ott_id': 'organism_otol_phylum_ott_id',
+                 'class_ott_id': 'organism_otol_class_ott_id',
+                 'order_ott_id': 'organism_otol_order_ott_id',
+                 'family_ott_id': 'organism_otol_family_ott_id',
+                 'genus_ott_id': 'organism_otol_genus_ott_id',
+                 'species_ott_id': 'organism_otol_species_ott_id',
+                 }
 
 
 merged.rename(columns=renaming_dict, inplace=True)
