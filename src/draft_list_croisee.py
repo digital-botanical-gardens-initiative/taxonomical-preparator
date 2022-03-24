@@ -23,7 +23,7 @@ import subprocess
 
 from pathlib import Path
 
-p = Path(__file__).parents[0]
+p = Path(__file__).parents[1]
 print(p)
 os.chdir(p)
 
@@ -269,10 +269,17 @@ df_tax_lineage_filtered = df_tax_lineage.groupby(['ott_id', 'sub_rank'], as_inde
 
 df_tax_lineage_filtered_flat = df_tax_lineage_filtered.pivot(index='ott_id', columns='sub_rank', values='sub_name')
 
+# Since we also want the ott_id for each taxo levels we repeat this operation
+
+df_tax_lineage_filtered_flat_ott_ids = df_tax_lineage_filtered.pivot(index='ott_id', columns='sub_rank', values='sub_ott_id')
+# We now prefix all column names of this df
+
+df_tax_lineage_filtered_flat_ott_ids = df_tax_lineage_filtered_flat_ott_ids.add_suffix('_ott_id')
+
 # %%
 # Here we actually also want the lowertaxon (species usually) name
 
-df_tax_lineage_filtered_flat = pd.merge(df_tax_lineage_filtered_flat, df_tax_lineage_filtered[['ott_id', 'unique_name']], how='left', on='ott_id', )
+df_tax_lineage_filtered_flat = pd.merge(df_tax_lineage_filtered_flat, df_tax_lineage_filtered[['ott_id', 'unique_name']], how='left', on='ott_id' )
 
 #Despite the left join ott_id are duplicated 
 
