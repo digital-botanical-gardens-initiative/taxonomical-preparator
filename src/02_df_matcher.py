@@ -162,29 +162,8 @@ merged_df_all.to_csv(path_to_treated_merged_file, sep = ',', index = None)
 # Alternatively (and in order not to repeat the full fuzzy matching stage ) we can append additional metadata 
 
 
-# treated_merged_file = pd.read_csv(path_to_treated_merged_file,
-#                        sep=',', encoding= 'unicode_escape')
-
-
-
-# species_list_treated_taxo = pd.read_csv(path_to_treated_taxo_file,
-#                        sep=',', encoding= 'unicode_escape')
-
-
-
-# species_list_treated_taxo.filter(like='ott_id')
-
-
-
-# pd.merge(treated_merged_file, species_list_treated_taxo.filter(like='ott_id'), how='left', on='ott_id' )
-
-
-
-
 fuzzy_matched_unique = pd.read_csv(path_to_fuzzy_matched_file,
                        sep=',', encoding= 'unicode_escape')
-
-
 
 # We now proceed to df joins to fetch back the original metadata
 
@@ -197,11 +176,28 @@ species_list_treated_taxo = pd.read_csv(path_to_treated_taxo_file,
                        sep=',', encoding= 'unicode_escape')
 
 
-
 merged_df_all = pd.merge(merged_df, species_list_treated_taxo, how='left', left_on='matched_name', right_on='matched_name')
 
 
 # We now output the cleaned table 
 
+merged_df_all.to_csv(path_to_treated_merged_file, sep = ',', index = None)
+
+
+# Here we add the WD_id
+
+treated_merged_file = pd.read_csv(path_to_treated_merged_file,
+                       sep=',', encoding= 'unicode_escape')
+
+
+
+wd_taxa = pd.read_csv('/Users/pma/Dropbox/git_repos/lotus/lotus-wikidata-interact/downloadLotus/data/output/taxa.tsv',
+                       sep='\t', encoding= 'unicode_escape')
+
+wd_taxa.dropna(inplace = True)
+
+merged_df_all = pd.merge(treated_merged_file, wd_taxa[['names_pipe_separated', 'wikidataId']], how='left', left_on='organism_otol_unique_name', right_on='names_pipe_separated')
+
+merged_df_all['wd_taxa_qid'] = merged_df_all.wikidataId.str.replace('http://www.wikidata.org/entity/' , '')
 
 merged_df_all.to_csv(path_to_treated_merged_file, sep = ',', index = None)
