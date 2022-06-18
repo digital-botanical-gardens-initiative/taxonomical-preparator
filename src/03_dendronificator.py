@@ -58,13 +58,15 @@ def split_dataframe(df, chunk_size = 10000):
 
 splitted_df_list = split_dataframe(input_df, chunk_size = 3000)
 
-input_df = splitted_df_list[1]
+# Beware here we work only on a subset. This was set because of problems with massive markdown import from Dendron in VSCode
+# it is hacked by working on smaller chunks. Make sure to repeat for the full taxo !
+input_df = splitted_df_list[0]
 
 # len(splitted_df_list)
 
 # type(input_df.columns)
 
-rootdir = pathlib.Path('./data/out/taxo/taxo')
+rootdir = pathlib.Path('./data/out/taxo/taxo-jbuf')
 
 
 # As decribed here https://github.com/digitized-botanical-gardens-initiative/taxonomical-preparator/issues/3
