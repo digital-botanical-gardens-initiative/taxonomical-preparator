@@ -1,0 +1,99 @@
+{
+  "context": "All life",
+  "governing_code": "undefined",
+  "includes_approximate_matches": true,
+  "includes_deprecated_taxa": false,
+  "includes_suppressed_names": false,
+  "matched_names": [
+    "morinda citrifolia l."
+  ],
+  "results": [
+    {
+      "matches": [
+        {
+          "is_approximate_match": true,
+          "is_synonym": false,
+          "matched_name": "Morinda citrifolia",
+          "nomenclature_code": "ICN",
+          "score": 0.8333333134651184,
+          "search_string": "morinda citrifolia l.",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Morinda citrifolia",
+            "ott_id": 559722,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Byrsophyllum ellipticum",
+              "Coffea elliptica",
+              "Morinda angustifolia",
+              "Morinda aspera",
+              "Morinda chachuca",
+              "Morinda citrifolia citrifolia",
+              "Morinda citrifolia potteri",
+              "Morinda coreia stenophylla",
+              "Morinda elliptica",
+              "Morinda ligulata",
+              "Morinda littoralis",
+              "Morinda macrophylla",
+              "Morinda mudia",
+              "Morinda multiflora",
+              "Morinda nodosa",
+              "Morinda pubescens stenophylla",
+              "Morinda quadrangularis",
+              "Morinda stenophylla",
+              "Morinda teysmanniana",
+              "Morinda tinctoria",
+              "Morinda tomentosa",
+              "Morinda zollingeriana",
+              "Platanocephalus orientalis",
+              "Samama citrifolia",
+              "Sarcocephalus leichhardtii",
+              "Stylocoryna elliptica"
+            ],
+            "tax_sources": [
+              "ncbi:43522",
+              "gbif:5339879",
+              "irmng:11010563"
+            ],
+            "unique_name": "Morinda citrifolia (species in kingdom Archaeplastida)"
+          }
+        },
+        {
+          "is_approximate_match": true,
+          "is_synonym": false,
+          "matched_name": "Morinda citrifolia",
+          "nomenclature_code": "ICZN",
+          "score": 0.8333333134651184,
+          "search_string": "morinda citrifolia l.",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Morinda citrifolia",
+            "ott_id": 7873455,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [],
+            "tax_sources": [
+              "gbif:9861968"
+            ],
+            "unique_name": "Morinda citrifolia (species in Opisthokonta)"
+          }
+        }
+      ],
+      "name": "morinda citrifolia l."
+    }
+  ],
+  "taxonomy": {
+    "author": "open tree of life project",
+    "name": "ott",
+    "source": "ott3.3draft1",
+    "version": "3.3",
+    "weburl": "https://tree.opentreeoflife.org/about/taxonomy-version/ott3.3"
+  },
+  "unambiguous_names": [],
+  "unmatched_names": []
+}
