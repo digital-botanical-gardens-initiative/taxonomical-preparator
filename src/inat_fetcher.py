@@ -29,11 +29,28 @@ response = get_observations(
 pprint(response)
 
 
+# Following this answer https://github.com/pyinat/pyinaturalist/issues/403
+
+
+from pyinaturalist import get_observations
+
+
+
+
 response = get_observations(
     #user_id='pmallard',
     project_id=130644,
     per_page=1000
 )
+
+
+response = get_observations(
+    #user_id='pmallard',
+    project_id=130644,
+    per_page=1000,
+    access_token='eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2lkIjoxMzc4MDMxLCJleHAiOjE2NTcyNTczNDZ9.UjFh162VTSPyML1gD2JJo09__6mTZkW70fYKMwz2Sm45u1-TciwsP6akSFmpzuXD4JqmQW4SZ5VQZvugxc0Z0g'
+)
+
 
 print(response)
 
