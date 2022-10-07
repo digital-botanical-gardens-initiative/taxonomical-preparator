@@ -67,8 +67,12 @@ taxonomy_clean <- na.omit(taxonomy_clean)
 DBGI_database <- taxonomy_clean %>% 
                              select("unique_name","name.genus","name.family","name.order","name.class","name.domain")
 
-collapsibleTree(
+DBGI_tree <- collapsibleTree(
   DBGI_database,
   hierarchy = c("name.domain","name.class","name.order","name.family", "name.genus", "unique_name")
 )
 
+
+DBGI_tree %>% 
+  htmlwidgets::saveWidget(file="./data/out/DBGI_tree.html", selfcontained = TRUE)
+system('rm -r DBGI_tree_files')
