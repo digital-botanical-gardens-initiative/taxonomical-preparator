@@ -1,0 +1,31 @@
+
+
+library(rotl)
+taxa <- read.csv("./data/out/wd_inat_output.csv",sep=",")
+taxa_list <- unique(taxa$species_name.value)
+
+resolved_names <- tnrs_match_names(taxa_list)
+resolved_names_filter <- resolved_names[-grep("incertae_sedis",resolved_names$flags),]
+resolved_names_filter <- resolved_names_filter[!is.na(resolved_names_filter$flags),]
+lineage_garden <-tax_lineage(taxonomy_taxon_info(resolved_names_filter$ott_id, include_lineage = TRUE))
+
+ 
+my_tree <- tol_induced_subtree(ott_ids = resolved_names_filter$ott_id)
+
+
+
+collapsibleTree(
+  resolved_names_filter,
+  hierarchy = c("REGION", "CLASS", "NAME"), 
+  fill = c(
+    # The root
+    "seashell",
+    # Unique regions
+    rep("brown", length(unique(species$REGION))),
+    # Unique classes per region
+    rep("khaki", length(unique(paste(species$REGION, species$CLASS)))),
+    # Unique names per region
+    rep("forestgreen", length(unique(paste(species$NAME, species$REGION))))
+  )
+)
+
