@@ -27,6 +27,8 @@ usePackage("ggfortify")
 usePackage("ggtree")
 usePackage("plotly")
 usePackage("archive")
+usePackage("collapsibleTree")
+
 
 
 
@@ -69,7 +71,8 @@ DBGI_database <- taxonomy_clean %>%
 
 DBGI_tree <- collapsibleTree(
   DBGI_database,
-  hierarchy = c("name.domain","name.class","name.order","name.family", "name.genus", "unique_name")
+  hierarchy = c("name.domain","name.class","name.order","name.family", "name.genus", "unique_name"),
+  fill = "darkgreen"
 )
 
 
