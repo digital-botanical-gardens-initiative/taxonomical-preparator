@@ -30,6 +30,14 @@ usePackage("archive")
 usePackage("collapsibleTree")
 
 
+download.file('http://files.opentreeoflife.org/ott/ott3.3/ott3.3.tgz', destfile = "data/inputs/ott3.3.tgz", method = "wget", extra = "-r -p --random-wait")
+
+# and opened from the tar archive
+
+taxonomy <- read_delim(archive_read("data/inputs/ott3.3.tgz", file = "ott3.3/taxonomy.tsv"), col_types = cols(), delim = "|", escape_double = FALSE, trim_ws = TRUE )
+
+
+
 
 
 taxa <- read.csv("./data/out/wd_inat_output.csv",sep=",")
