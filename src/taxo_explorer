@@ -28,6 +28,7 @@ usePackage("ggtree")
 usePackage("plotly")
 usePackage("archive")
 usePackage("collapsibleTree")
+usePackage("threadr")
 
 
 download.file('http://files.opentreeoflife.org/ott/ott3.3/ott3.3.tgz', destfile = "data/inputs/ott3.3.tgz", method = "wget", extra = "-r -p --random-wait")
@@ -82,7 +83,6 @@ DBGI_tree <- collapsibleTree(
   hierarchy = c("name.domain","name.class","name.order","name.family", "name.genus", "unique_name"),
   fill = "darkgreen"
 )
-
 
 
 
