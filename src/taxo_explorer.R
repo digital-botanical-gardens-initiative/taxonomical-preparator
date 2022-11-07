@@ -28,7 +28,6 @@ usePackage("ggtree")
 usePackage("plotly")
 usePackage("archive")
 usePackage("collapsibleTree")
-usePackage("threadr")
 
 
 download.file('http://files.opentreeoflife.org/ott/ott3.3/ott3.3.tgz', destfile = "data/inputs/ott3.3.tgz", method = "wget", extra = "-r -p --random-wait")
@@ -84,11 +83,6 @@ DBGI_tree <- collapsibleTree(
   fill = "darkgreen"
 )
 
-
-
-DBGI_tree_json <-  htmlwidgets:::toJSON(DBGI_tree)
-
-write_json(DBGI_tree_json, "./data/out/DBGI_tree.json")
 
 DBGI_tree %>% 
   htmlwidgets::saveWidget(file="./data/out/DBGI_tree.html", selfcontained = TRUE)

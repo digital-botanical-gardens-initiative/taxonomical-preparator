@@ -1,9 +1,14 @@
 name: taxonomical-preparator
 channels:
+  - conda-forge
+  - anaconda
   - defaults
 dependencies:
   - pandas
   - python
   - pip
+  - pip :
+    - opentree
+    - pyinaturalist_convert
+  - plotly
   - pyinaturalist
-prefix: /home/mwannier/anaconda3/envs/taxonomical-preparator
