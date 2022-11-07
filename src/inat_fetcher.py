@@ -5,8 +5,12 @@ from pyinaturalist_convert import *
 from pyinaturalist import get_observations
 from pandas import json_normalize
 import requests
-import os
+import os, getpass
 import time
+import format_module
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # These lines allows to make sure that we are placed at the repo directory level 
@@ -18,7 +22,6 @@ print(p)
 os.chdir(p)
 
 
-
 data_out_path = './data/out/'
 
 output_filename = 'test_inat_output'
@@ -26,6 +29,8 @@ filename_suffix = 'csv'
 path_to_output_file = os.path.join(data_out_path, output_filename + "." + filename_suffix)
 
 
+# import env variable
+access_token=os.getenv('ACCESS_TOKEN')
 
 
 response = get_observations(
@@ -33,7 +38,7 @@ response = get_observations(
     project_id=130644,
     page='all',
     per_page=300,
-    access_token='eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2lkIjoxMzc4MDMxLCJleHAiOjE2NTkyNjcwNjF9.DjYGEzNKm2DqRKAGJ07-_gAPTOY9vg5DJWYp-D4eV30ImLFgbPBEp04ipm-ZxzBz96iAo5Cb3fvX9Mm-xAxR2A'
+    #access_token=access_token
 )
 
 
@@ -52,11 +57,20 @@ first_column = df.pop('id')
 # insert column using insert(position,column_name,
 # first_column) function
 df.insert(0, 'id', first_column)
+
+#location formatting
+#df.location[0],df.location[1] = df.location[1],df.location[0]
+#df['location'] = df['location'].str.replace('[','').replace(']','')
   
-
-
+format_module.location_formatting(df,'location','swiped_loc')
 
 # We keep the table 
 
 df.to_csv(path_to_output_file, index = False)
+
+
+#update the database using update_db.py script
+usr = getpass.getuser()
+script = './src/update_db.py'
+exec(open(script).read())
 
