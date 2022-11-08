@@ -147,7 +147,8 @@ sql = f'''CREATE TEMP TABLE tmp_x (
         "created_at_details.hour" NUMERIC,
         "created_at_details.year" NUMERIC,
         "created_at_details.day" NUMERIC,
-        swiped_loc VARCHAR(100)
+        swiped_loc VARCHAR(100),
+        dbgi_id VARCHAR(50)
 ); -- but see below
 
 
@@ -304,7 +305,8 @@ SET     quality_grade = tmp_x.quality_grade ,
         "created_at_details.hour" = tmp_x."created_at_details.hour" ,
         "created_at_details.year" = tmp_x."created_at_details.year" ,
         "created_at_details.day" = tmp_x."created_at_details.day" ,
-        swiped_loc = tmp_x.swiped_loc
+        swiped_loc = tmp_x.swiped_loc,
+        dbgi_id = tmp_x.dbgi_id
 FROM tmp_x  
 WHERE pyinat.id = tmp_x.id 
         ;

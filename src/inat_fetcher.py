@@ -9,6 +9,7 @@ import os, getpass
 import time
 import format_module
 from dotenv import load_dotenv
+import re
 
 load_dotenv()
 import plotly
@@ -65,15 +66,17 @@ df.insert(0, 'id', first_column)
   
 format_module.location_formatting(df,'location','swiped_loc')
 
+format_module.dbgi_id_extract(df)
 # We keep the table 
 
 df.to_csv(path_to_output_file, index = False)
 
 
 #update the database using update_db.py script
-usr = getpass.getuser()
 script = './src/update_db.py'
 exec(open(script).read())
+
+
 
 # Eventual plotlyy
 
