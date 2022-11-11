@@ -148,20 +148,20 @@ sql = f'''CREATE TEMP TABLE tmp_x (
         "created_at_details.year" NUMERIC,
         "created_at_details.day" NUMERIC,
         swiped_loc VARCHAR(100),
-        dbgi_id VARCHAR(50)
+        emi_external_id VARCHAR(50)
 ); -- but see below
 
 
 COPY tmp_x FROM '{CSV_PATH}' delimiter ',' csv header;
 
-
 ALTER TABLE tmp_x
+ADD COLUMN updated_on TIMESTAMP,
 ALTER COLUMN location
 TYPE Geometry
 USING ST_GeomFromText(replace(replace(replace(location,',',''),']',')'),'[','POINT('), 4326),
 ALTER COLUMN swiped_loc
 TYPE GEOMETRY 
-USING ST_GeomFromText(replace(replace(replace(location,',',''),']',')'),'[','POINT('), 4326);
+USING ST_GeomFromText(replace(replace(swiped_loc,',',''),'(','POINT('), 4326);
 
 INSERT INTO pyinat
 SELECT * FROM tmp_x
@@ -306,14 +306,14 @@ SET     quality_grade = tmp_x.quality_grade ,
         "created_at_details.year" = tmp_x."created_at_details.year" ,
         "created_at_details.day" = tmp_x."created_at_details.day" ,
         swiped_loc = tmp_x.swiped_loc,
-        dbgi_id = tmp_x.dbgi_id
+        emi_external_id = tmp_x.emi_external_id
 FROM tmp_x  
 WHERE pyinat.id = tmp_x.id 
         ;
 
+DROP TABLE tmp_x; -- else it is dropped at end of session automatically
 
-
-DROP TABLE tmp_x; -- else it is dropped at end of session automatically'''
+'''
 
 # import env variable
 load_dotenv()
@@ -330,11 +330,11 @@ pwd=os.getenv('DIRECTUS_PWD')
 
 conn1 = psycopg2.connect(
 	database="directus_dbgi",
-    user=usr,
-    password=pwd,
-    host='127.0.0.1',
-    port= '5432'
-    )
+        user=usr,
+        password=pwd,
+        host='127.0.0.1',
+        port= '5432'
+        )
 
 #conn1.autocommit = True
 

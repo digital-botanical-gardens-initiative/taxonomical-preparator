@@ -60,10 +60,7 @@ first_column = df.pop('id')
 # first_column) function
 df.insert(0, 'id', first_column)
 
-#location formatting
-#df.location[0],df.location[1] = df.location[1],df.location[0]
-#df['location'] = df['location'].str.replace('[','').replace(']','')
-  
+#formatting
 format_module.location_formatting(df,'location','swiped_loc')
 
 format_module.dbgi_id_extract(df)

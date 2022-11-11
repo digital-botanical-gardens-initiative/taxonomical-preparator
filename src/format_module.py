@@ -22,4 +22,6 @@ def dbgi_id_extract(df):
     df.ofvs = df.ofvs.astype(str)
     for i in range(len(df)):
         if re.findall(r'dbgi_spl\w+',df.ofvs[i],flags):
-            df.at[i,'dbgi_id'] = re.findall(r'dbgi_spl\w+',df.ofvs[i],flags)[0]
+            df.at[i,'dbgi_id'] = re.findall(r'dbgi_spl\w+',df.ofvs[i],flags)[0].upper()
+
+    
