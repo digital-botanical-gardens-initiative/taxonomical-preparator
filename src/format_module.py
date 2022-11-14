@@ -21,7 +21,7 @@ def dbgi_id_extract(df):
     flags = re.IGNORECASE
     df.ofvs = df.ofvs.astype(str)
     for i in range(len(df)):
-        if re.findall(r'dbgi_spl\w+',df.ofvs[i],flags):
-            df.at[i,'dbgi_id'] = re.findall(r'dbgi_spl\w+',df.ofvs[i],flags)[0].upper()
+        if re.findall("(?<='value_ci': ')(.{1,30})(?=', 'name': 'emi_external_id')",df.ofvs[i],flags):
+            df.at[i,'dbgi_id'] = re.findall("(?<='value_ci': ')(.{1,30})(?=', 'name': 'emi_external_id')",df.ofvs[i],flags)[0].lower()
 
     
