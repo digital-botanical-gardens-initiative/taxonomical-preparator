@@ -83,12 +83,12 @@ import plotly.express as px
 
 df_1 = px.data.stocks()
 fig = px.line(df_1, x='date', y="GOOG")
-fig.show()
+#Mfig.show()
 
 df['count'] = 1
 
 fig = px.line(df, x='time_observed_at', y="count")
-fig.show()
+#fig.show()
 
 
 
@@ -102,7 +102,7 @@ fig.update_traces(xbins_size="M1")
 fig.update_xaxes(showgrid=True, ticklabelmode="period", dtick="M1", tickformat="%b\n%Y")
 fig.update_layout(bargap=0.1)
 fig.add_trace(go.Scatter(mode="markers", x=df["time_observed_at"], y=df["count"], name="daily"))
-fig.show()
+#fig.show()
 
 fig.write_json(file = 'data/out/inat.json')
 

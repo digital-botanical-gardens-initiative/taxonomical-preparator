@@ -99,7 +99,7 @@ sql = f'''CREATE TEMP TABLE tmp_x (
         taxon_default_photo_url TEXT,
         taxon_default_photo_original_dimensions_height NUMERIC,
         taxon_default_photo_original_dimensions_width NUMERIC,
-        taxon_default_photo_flags VARCHAR(25),
+        taxon_default_photo_flags TEXT,
         taxon_default_photo_square_url TEXT,
         taxon_default_photo_medium_url TEXT,
         taxon_iconic_taxon_name VARCHAR(25),
