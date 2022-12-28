@@ -19,11 +19,8 @@ def dbgi_id_extract(df):
 
     df['emi_external_id'] = np.nan
     
-    #flags = re.IGNORECASE
     df.ofvs = df.ofvs.astype(str)
-    #for i in range(len(df)):
-     #   if re.findall("(?<='value_ci': ')(.{1,30})(?=', 'name': 'emi_external_id')",df.ofvs[i],flags):
-      #      df.at[i,'dbgi_id'] = re.findall("(?<='value_ci': ')(.{1,30})(?=', 'name': 'emi_external_id')",df.ofvs[i],flags)[0].lower()
+
     for i in range(len(df)):
         dct = dict()
         if df.ofvs[i] != '[]':

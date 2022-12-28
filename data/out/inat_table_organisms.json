@@ -568,7 +568,8 @@
     "Rhamnus alpina",
     "Echinops sphaerocephalus",
     "Viburnum tinus",
-    "Juniperus oxycedrus"
+    "Juniperus oxycedrus",
+    "Heptapleurum arboricola"
   ],
   "results": [
     {
@@ -32631,6 +32632,38 @@
         }
       ],
       "name": "Juniperus oxycedrus"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": true,
+          "matched_name": "Heptapleurum arboricola",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "heptapleurum arboricola",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Schefflera arboricola",
+            "ott_id": 383683,
+            "rank": "species",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Heptapleurum arboricola",
+              "Heptapleurum arboriculum"
+            ],
+            "tax_sources": [
+              "ncbi:46415",
+              "gbif:3038723",
+              "irmng:10659469"
+            ],
+            "unique_name": "Schefflera arboricola"
+          }
+        }
+      ],
+      "name": "Heptapleurum arboricola"
     }
   ],
   "taxonomy": {

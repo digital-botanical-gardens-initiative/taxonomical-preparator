@@ -8,12 +8,16 @@ import zipfile
 import glob
 import os
 import subprocess
+from dotenv import load_dotenv
 
 
 
 # %% First we'll externalise the variables we'll use in the rest of the script
 
-switch_id = '9H11G243IaJTyjO'
+# import env variable
+load_dotenv()
+
+switch_id=os.getenv('SWITCH_ID')
 
 
 data_in_path = './data/in/'

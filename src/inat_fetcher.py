@@ -66,11 +66,9 @@ df.insert(0, 'id', first_column)
 
 #formatting
 format_module.location_formatting(df,'location','swiped_loc')
-
 format_module.dbgi_id_extract(df)
 
 # We keep the table 
-
 df.to_csv(path_to_output_file, index = False)
 
 

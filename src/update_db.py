@@ -324,10 +324,6 @@ pwd=os.getenv('DIRECTUS_PWD')
 
 # establish connections
 
-#conn_string = 'postgresql://directus:directus_dbgi@127.0.0.1/directus_dbgi'
-#db = create_engine(conn_string)
-#conn = db.connect()
-
 conn1 = psycopg2.connect(
 	database="directus_dbgi",
         user=usr,
