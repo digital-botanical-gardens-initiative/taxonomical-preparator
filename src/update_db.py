@@ -5,10 +5,16 @@ import pandas as pd
 import os
 from dotenv import load_dotenv
 
+#Get the path to the output of inaturalist
 CSV_PATH = f'{os.getcwd()}/data/out/test_inat_output.csv'
 
 #create SQL query 
-sql = f'''CREATE TEMP TABLE tmp_x (
+sql = f'''
+/* Create a temporary table with the columns found in the csv file 
+and copy the values from the csv file
+*/
+
+CREATE TEMP TABLE tmp_x (
         id NUMERIC,
         quality_grade VARCHAR(25),
         time_observed_at TIMESTAMP,
@@ -154,6 +160,8 @@ sql = f'''CREATE TEMP TABLE tmp_x (
 
 COPY tmp_x FROM '{CSV_PATH}' delimiter ',' csv header;
 
+--Alter the table to format the location and the swiped_loc columns as a geometry type
+
 ALTER TABLE tmp_x
 ADD COLUMN updated_on TIMESTAMP,
 ALTER COLUMN location
@@ -163,9 +171,14 @@ ALTER COLUMN swiped_loc
 TYPE GEOMETRY 
 USING ST_GeomFromText(replace(replace(swiped_loc,',',''),'(','POINT('), 4326);
 
+
+--Insert the values from the temporary table in the pyinat table where the ids do not already exist
+
 INSERT INTO pyinat
 SELECT * FROM tmp_x
 WHERE id NOT IN (SELECT id FROM pyinat);
+
+--Update the values of the columns where the ids already exist and match
 
 UPDATE pyinat
 SET     quality_grade = tmp_x.quality_grade ,
@@ -311,6 +324,7 @@ FROM tmp_x
 WHERE pyinat.id = tmp_x.id 
         ;
 
+--Drop the temporary table
 DROP TABLE tmp_x; -- else it is dropped at end of session automatically
 
 '''

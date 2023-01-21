@@ -49,8 +49,6 @@ response = get_observations(
 
 pprint(response)
 
-
-
 df = to_dataframe(response)
 
 df.info()
@@ -64,7 +62,7 @@ first_column = df.pop('id')
 # first_column) function
 df.insert(0, 'id', first_column)
 
-#formatting
+#formatting of data
 format_module.location_formatting(df,'location','swiped_loc')
 format_module.dbgi_id_extract(df)
 
@@ -75,6 +73,7 @@ df.to_csv(path_to_output_file, index = False)
 #update the database using update_db.py script
 script = './src/update_db.py'
 exec(open(script).read())
+
 
 
 
