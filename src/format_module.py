@@ -4,21 +4,19 @@
 
 '''Function to create new formated location column'''
 def location_formatting(df,old_column,new_column):
-    #initialize the new column with NAs
+    # Create a new column with all values initialized to 'NA'
     df[new_column] = 'NA'
 
-    #loop over each line of the dataframe and change the new column value with the swiped values of the old column
-    for i in range(len(df)):
-        lat,lon = df[old_column][i]
-        new_location = (lon,lat)
-        df.at[i,new_column] = new_location
-
-    #return the dataframe
+    # Use the apply method to process each row in the dataframe
+    df[new_column] = df[old_column].apply(lambda x: (x[1], x[0]))
+    
+    # Return the modified dataframe
     return df
 
 
+
 '''Function to extract the dbgi id from the ofvs column and put it in a new column'''
-def dbgi_id_extract(df):
+'''def dbgi_id_extract(df):
     import numpy as np
 
     #Initialize the new column with NAs
@@ -45,4 +43,19 @@ def dbgi_id_extract(df):
             # when the 'name_ci' of the dictionary equal 'emi_external_id'
             #This avoids the problem of having the wrong 'value_ci' taken
             if dct['name_ci'] == 'emi_external_id':
-                df.at[i,'emi_external_id'] = dct['value_ci']
+                df.at[i,'emi_external_id'] = dct['value_ci']'''
+
+def dbgi_id_extract(df):
+    import numpy as np
+
+    # Define a function to extract the emi_external_id from the ofvs list
+    def extract_emi_external_id(lst):
+        for d in lst:
+            if d['name_ci'] == 'emi_external_id':
+                return d['value_ci']
+        return np.nan
+
+    # Apply the function to each row and assign the result to the new column
+    df['emi_external_id'] = df['ofvs'].apply(extract_emi_external_id)
+    
+    return df

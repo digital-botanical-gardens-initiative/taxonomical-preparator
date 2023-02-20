@@ -83,7 +83,7 @@
     "Murraya koenigii",
     "Jasminum sambac",
     "Vanilla planifolia",
-    "Cinnamomum zeylanicum",
+    "Cinnamomum verum",
     "Persicaria odorata",
     "Piper longum",
     "Coleus amboinicus",
@@ -484,6 +484,7 @@
     "Artemisia absinthium",
     "Chelidonium majus",
     "Cichorium intybus",
+    "Leonurus",
     "Ballota nigra",
     "Potentilla",
     "Lactuca virosa",
@@ -5333,11 +5334,11 @@
       "matches": [
         {
           "is_approximate_match": false,
-          "is_synonym": true,
-          "matched_name": "Cinnamomum zeylanicum",
+          "is_synonym": false,
+          "matched_name": "Cinnamomum verum",
           "nomenclature_code": "ICN",
           "score": 1.0,
-          "search_string": "cinnamomum zeylanicum",
+          "search_string": "cinnamomum verum",
           "taxon": {
             "flags": [],
             "is_suppressed": false,
@@ -5404,7 +5405,7 @@
           }
         }
       ],
-      "name": "Cinnamomum zeylanicum"
+      "name": "Cinnamomum verum"
     },
     {
       "matches": [
@@ -27952,6 +27953,40 @@
         {
           "is_approximate_match": false,
           "is_synonym": false,
+          "matched_name": "Leonurus",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "leonurus",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Leonurus",
+            "ott_id": 544718,
+            "rank": "genus",
+            "source": "ott3.3draft1",
+            "synonyms": [
+              "Cardiaca",
+              "Leonuroides"
+            ],
+            "tax_sources": [
+              "ncbi:4137",
+              "worms:425917",
+              "gbif:7492548",
+              "irmng:1372479",
+              "irmng:1308425"
+            ],
+            "unique_name": "Leonurus"
+          }
+        }
+      ],
+      "name": "Leonurus"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
           "matched_name": "Ballota nigra",
           "nomenclature_code": "ICN",
           "score": 1.0,
@@ -32742,6 +32777,7 @@
     "Chrysopogon zizanioides",
     "Jasminum sambac",
     "Vanilla planifolia",
+    "Cinnamomum verum",
     "Persicaria odorata",
     "Piper longum",
     "Rungia klossii",
@@ -33108,6 +33144,7 @@
     "Artemisia absinthium",
     "Chelidonium majus",
     "Cichorium intybus",
+    "Leonurus",
     "Ballota nigra",
     "Potentilla",
     "Lactuca virosa",
