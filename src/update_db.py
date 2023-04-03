@@ -20,13 +20,13 @@ CREATE TEMP TABLE tmp_x (
         taxon_geoprivacy VARCHAR(25),
         annotations VARCHAR(25),
         uuid TEXT,
-        cached_votes_total BOOLEAN,
+        cached_votes_total NUMERIC,
         identifications_most_agree BOOLEAN,
         species_guess VARCHAR(100),
         identifications_most_disagree BOOLEAN,
         tags VARCHAR(25),
         positional_accuracy NUMERIC,
-        comments_count BOOLEAN,
+        comments_count NUMERIC,
         site_id BOOLEAN,
         license_code VARCHAR(25),
         quality_metrics TEXT,
@@ -43,7 +43,7 @@ CREATE TEMP TABLE tmp_x (
         captive BOOLEAN,
         ident_taxon_ids TEXT,
         outlinks TEXT,
-        faves_count BOOLEAN,
+        faves_count NUMERIC,
         ofvs TEXT,
         num_identification_agreements NUMERIC,
         comments TEXT,
@@ -54,7 +54,7 @@ CREATE TEMP TABLE tmp_x (
         owners_identification_from_vision BOOLEAN,
         identifications_count NUMERIC,
         obscured BOOLEAN,
-        num_identification_disagreements BOOLEAN,
+        num_identification_disagreements NUMERIC,
         geoprivacy BOOLEAN,
         location VARCHAR(100),
         votes TEXT,
@@ -95,8 +95,8 @@ CREATE TEMP TABLE tmp_x (
         taxon_complete_species_count BOOLEAN,
         taxon_universal_search_rank NUMERIC,
         taxon_observations_count NUMERIC,
-        taxon_flag_counts_resolved INTEGER,
-        taxon_flag_counts_unresolved TEXT,
+        taxon_flag_counts_resolved NUMERIC,
+        taxon_flag_counts_unresolved NUMERIC,
         taxon_atlas_id VARCHAR(50),
         taxon_default_photo_id NUMERIC,
         taxon_default_photo_license_code VARCHAR(25),
@@ -126,7 +126,7 @@ CREATE TEMP TABLE tmp_x (
         user_icon TEXT,
         user_observations_count NUMERIC,
         user_identifications_count NUMERIC,
-        user_journal_posts_count BOOLEAN,
+        user_journal_posts_count NUMERIC,
         user_activity_count NUMERIC,
         user_species_count NUMERIC,
         user_universal_search_rank NUMERIC,
@@ -166,6 +166,9 @@ ADD COLUMN updated_on TIMESTAMP,
 ALTER COLUMN location
 TYPE Geometry
 USING ST_GeomFromText(replace(replace(replace(location,',',''),']',')'),'[','POINT('), 4326),
+ALTER COLUMN geojson_coordinates
+TYPE GEOMETRY 
+USING ST_GeomFromText(replace(replace(replace(geojson_coordinates,',',''),']',')'),'[','POINT('), 4326),
 ALTER COLUMN swiped_loc
 TYPE GEOMETRY 
 USING ST_GeomFromText(replace(replace(swiped_loc,',',''),'(','POINT('), 4326);
