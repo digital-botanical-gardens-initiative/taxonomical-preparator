@@ -24,7 +24,7 @@ CREATE TEMP TABLE tmp_x (
         identifications_most_agree BOOLEAN,
         species_guess VARCHAR(100),
         identifications_most_disagree BOOLEAN,
-        tags VARCHAR(25),
+        tags VARCHAR(150),
         positional_accuracy NUMERIC,
         comments_count NUMERIC,
         site_id BOOLEAN,
