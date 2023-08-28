@@ -1,27 +1,32 @@
 # import packages
 import psycopg2
 import pandas as pd
-from sqlalchemy import create_engine
 import os
 from dotenv import load_dotenv
 
+#Get the path to the output of inaturalist
 CSV_PATH = f'{os.getcwd()}/data/out/test_inat_output.csv'
 
 #create SQL query 
-sql = f'''CREATE TEMP TABLE tmp_x (
+sql = f'''
+/* Create a temporary table with the columns found in the csv file 
+and copy the values from the csv file
+*/
+
+CREATE TEMP TABLE tmp_x (
         id NUMERIC,
         quality_grade VARCHAR(25),
         time_observed_at TIMESTAMP,
         taxon_geoprivacy VARCHAR(25),
         annotations VARCHAR(25),
         uuid TEXT,
-        cached_votes_total BOOLEAN,
+        cached_votes_total NUMERIC,
         identifications_most_agree BOOLEAN,
         species_guess VARCHAR(100),
         identifications_most_disagree BOOLEAN,
-        tags VARCHAR(25),
+        tags VARCHAR(150),
         positional_accuracy NUMERIC,
-        comments_count BOOLEAN,
+        comments_count NUMERIC,
         site_id BOOLEAN,
         license_code VARCHAR(25),
         quality_metrics TEXT,
@@ -38,7 +43,7 @@ sql = f'''CREATE TEMP TABLE tmp_x (
         captive BOOLEAN,
         ident_taxon_ids TEXT,
         outlinks TEXT,
-        faves_count BOOLEAN,
+        faves_count NUMERIC,
         ofvs TEXT,
         num_identification_agreements NUMERIC,
         comments TEXT,
@@ -49,7 +54,7 @@ sql = f'''CREATE TEMP TABLE tmp_x (
         owners_identification_from_vision BOOLEAN,
         identifications_count NUMERIC,
         obscured BOOLEAN,
-        num_identification_disagreements BOOLEAN,
+        num_identification_disagreements NUMERIC,
         geoprivacy BOOLEAN,
         location VARCHAR(100),
         votes TEXT,
@@ -90,8 +95,8 @@ sql = f'''CREATE TEMP TABLE tmp_x (
         taxon_complete_species_count BOOLEAN,
         taxon_universal_search_rank NUMERIC,
         taxon_observations_count NUMERIC,
-        taxon_flag_counts_resolved INTEGER,
-        taxon_flag_counts_unresolved TEXT,
+        taxon_flag_counts_resolved NUMERIC,
+        taxon_flag_counts_unresolved NUMERIC,
         taxon_atlas_id VARCHAR(50),
         taxon_default_photo_id NUMERIC,
         taxon_default_photo_license_code VARCHAR(25),
@@ -121,7 +126,7 @@ sql = f'''CREATE TEMP TABLE tmp_x (
         user_icon TEXT,
         user_observations_count NUMERIC,
         user_identifications_count NUMERIC,
-        user_journal_posts_count BOOLEAN,
+        user_journal_posts_count NUMERIC,
         user_activity_count NUMERIC,
         user_species_count NUMERIC,
         user_universal_search_rank NUMERIC,
@@ -154,18 +159,28 @@ sql = f'''CREATE TEMP TABLE tmp_x (
 
 COPY tmp_x FROM '{CSV_PATH}' delimiter ',' csv header;
 
+--Alter the table to format the location and the swiped_loc columns as a geometry type
+
 ALTER TABLE tmp_x
 ADD COLUMN updated_on TIMESTAMP,
 ALTER COLUMN location
 TYPE Geometry
 USING ST_GeomFromText(replace(replace(replace(location,',',''),']',')'),'[','POINT('), 4326),
+ALTER COLUMN geojson_coordinates
+TYPE GEOMETRY 
+USING ST_GeomFromText(replace(replace(replace(geojson_coordinates,',',''),']',')'),'[','POINT('), 4326),
 ALTER COLUMN swiped_loc
 TYPE GEOMETRY 
 USING ST_GeomFromText(replace(replace(swiped_loc,',',''),'(','POINT('), 4326);
 
+
+--Insert the values from the temporary table in the pyinat table where the ids do not already exist
+
 INSERT INTO pyinat
 SELECT * FROM tmp_x
 WHERE id NOT IN (SELECT id FROM pyinat);
+
+--Update the values of the columns where the ids already exist and match
 
 UPDATE pyinat
 SET     quality_grade = tmp_x.quality_grade ,
@@ -311,6 +326,7 @@ FROM tmp_x
 WHERE pyinat.id = tmp_x.id 
         ;
 
+--Drop the temporary table
 DROP TABLE tmp_x; -- else it is dropped at end of session automatically
 
 '''
@@ -323,10 +339,6 @@ pwd=os.getenv('DIRECTUS_PWD')
 
 
 # establish connections
-
-#conn_string = 'postgresql://directus:directus_dbgi@127.0.0.1/directus_dbgi'
-#db = create_engine(conn_string)
-#conn = db.connect()
 
 conn1 = psycopg2.connect(
 	database="directus_dbgi",

@@ -10,9 +10,12 @@ import time
 import format_module
 from dotenv import load_dotenv
 import re
+import numpy as np
+import json
 
 load_dotenv()
 import plotly
+
 
 
 # These lines allows to make sure that we are placed at the repo directory level 
@@ -46,8 +49,6 @@ response = get_observations(
 
 pprint(response)
 
-
-
 df = to_dataframe(response)
 
 df.info()
@@ -61,12 +62,11 @@ first_column = df.pop('id')
 # first_column) function
 df.insert(0, 'id', first_column)
 
-#formatting
+#formatting of data
 format_module.location_formatting(df,'location','swiped_loc')
-
 format_module.dbgi_id_extract(df)
-# We keep the table 
 
+# We keep the table 
 df.to_csv(path_to_output_file, index = False)
 
 
