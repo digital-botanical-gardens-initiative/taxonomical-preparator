@@ -10,5 +10,6 @@ dependencies:
   - pip :
     - opentree
     - pyinaturalist_convert
+    - tablib
   - plotly
   - pyinaturalist
