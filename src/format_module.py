@@ -1,3 +1,5 @@
+import numpy as np
+
 '''Module to format inaturalist data'''
 
 
@@ -46,7 +48,6 @@ def location_formatting(df,old_column,new_column):
                 df.at[i,'emi_external_id'] = dct['value_ci']'''
 
 def dbgi_id_extract(df):
-    import numpy as np
 
     # Define a function to extract the emi_external_id from the ofvs list
     def extract_emi_external_id(lst):
