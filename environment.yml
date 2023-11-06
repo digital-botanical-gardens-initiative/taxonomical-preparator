@@ -5,10 +5,12 @@ channels:
   - defaults
 dependencies:
   - pandas
-  - python
+  - plotly
+  - pyinaturalist
+  - pyinaturalist-convert
+  - python-dotenv
+  - python==3.10
+  - tablib
   - pip
   - pip :
     - opentree
-    - pyinaturalist_convert
-  - plotly
-  - pyinaturalist
