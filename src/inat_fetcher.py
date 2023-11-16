@@ -1,8 +1,10 @@
-from pyinaturalist import *
+# from pyinaturalist import *
 import pandas as pd
 from pandas import json_normalize
-from pyinaturalist_convert import *
+# from pyinaturalist_convert import *
+from pyinaturalist_convert import to_dataframe
 from pyinaturalist import get_observations
+from pyinaturalist import pprint
 from pandas import json_normalize
 import requests
 import os, getpass
@@ -29,7 +31,7 @@ os.chdir(p)
 
 data_out_path = './data/out/'
 
-output_filename = 'test_inat_output'
+output_filename = 'test_inat_output_hl'
 filename_suffix = 'csv'
 path_to_output_file = os.path.join(data_out_path, output_filename + "." + filename_suffix)
 
@@ -64,13 +66,17 @@ df.insert(0, 'id', first_column)
 
 #formatting of data
 format_module.location_formatting(df,'location','swiped_loc')
-format_module.dbgi_id_extract(df)
+
+for col in df.columns:
+    print(col)
+
+# format_module.dbgi_id_extract(df)
 
 # We keep the table 
 df.to_csv(path_to_output_file, index = False)
 
 
 #update the database using update_db.py script
-script = './src/update_db.py'
-exec(open(script).read())
+# script = './src/update_db.py'
+# exec(open(script).read())
 
