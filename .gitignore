@@ -3,3 +3,4 @@ data/out/taxo
 data/out/test_inat_output_hl.csv
 .env
 *.pyc
+.ipynb_checkpoints
