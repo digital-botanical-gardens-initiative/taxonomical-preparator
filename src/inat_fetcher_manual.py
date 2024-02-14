@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 import re
 import numpy as np
 import json
+import time
 
 load_dotenv()
 import plotly
@@ -29,7 +30,10 @@ os.chdir(p)
 
 data_out_path = './data/out/'
 
-output_filename = 'test_inat_output'
+# Fetch current date
+current_date = time.strftime("%Y_%m_%d")
+
+output_filename = current_date + '_inat_output'
 filename_suffix = 'csv'
 path_to_output_file = os.path.join(data_out_path, output_filename + "." + filename_suffix)
 
@@ -42,12 +46,12 @@ response = get_observations(
     # user_id='pmallard',
     project_id=130644,
     page='all',
-    per_page=300,
+    per_page=30,
     #access_token=access_token
 )
 
 
-pprint(response)
+# pprint(response)
 
 df = to_dataframe(response)
 
@@ -62,15 +66,15 @@ first_column = df.pop('id')
 # first_column) function
 df.insert(0, 'id', first_column)
 
-#formatting of data
-format_module.location_formatting(df,'location','swiped_loc')
-format_module.dbgi_id_extract(df)
+# #formatting of data
+# format_module.location_formatting(df,'location','swiped_loc')
+# format_module.dbgi_id_extract(df)
 
 # We keep the table 
 df.to_csv(path_to_output_file, index = False)
 
 
-#update the database using update_db.py script
-script = './src/update_db.py'
-exec(open(script).read())
+# #update the database using update_db.py script
+# script = './src/update_db.py'
+# exec(open(script).read())
 
