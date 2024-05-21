@@ -51,7 +51,7 @@ response = get_observations(
 )
 
 
-# pprint(response)
+pprint(response)
 
 df = to_dataframe(response)
 
