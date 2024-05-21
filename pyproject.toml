@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "taxonomical-preparator"
+version = "0.1.0"
+description = ""
+authors = ["PMA <pierre-marie.allard@unifr.ch>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.2.2"
+opentree = "^1.0.1"
+pyinaturalist = "^0.19.0"
+pyinaturalist-convert = "^0.6.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
