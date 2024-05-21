@@ -1,0 +1,1267 @@
+{
+  "context": "All life",
+  "governing_code": "undefined",
+  "includes_approximate_matches": true,
+  "includes_deprecated_taxa": false,
+  "includes_suppressed_names": false,
+  "matched_names": [
+    "arion",
+    "solanum tuberosum",
+    "poaceae",
+    "nan",
+    "triticum aestivum",
+    "papaver",
+    "euphorbia",
+    "notiophilus",
+    "angiospermae",
+    "veronica hederifolia",
+    "capsella bursa-pastoris",
+    "cerastium fontanum",
+    "deroceras",
+    "veronica",
+    "life",
+    "euphorbia helioscopia",
+    "cynara",
+    "poa annua",
+    "annelida",
+    "coleoptera",
+    "pterygota"
+  ],
+  "results": [
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Arion",
+          "nomenclature_code": "ICZN",
+          "score": 1.0,
+          "search_string": "arion",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Arion",
+            "ott_id": 661122,
+            "rank": "genus",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Ario",
+              "Aroni",
+              "Baudonia",
+              "Carinella",
+              "Lochea",
+              "Macroarion",
+              "Microarion",
+              "Prolepis",
+              "Riyearon",
+              "Tetraspis"
+            ],
+            "tax_sources": [
+              "worms:818149",
+              "ncbi:6542",
+              "gbif:2294092",
+              "irmng:1420165"
+            ],
+            "unique_name": "Arion"
+          }
+        }
+      ],
+      "name": "arion"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Solanum tuberosum",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "solanum tuberosum",
+          "taxon": {
+            "flags": [
+              "sibling_higher"
+            ],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Solanum tuberosum",
+            "ott_id": 494835,
+            "rank": "species",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Solanum chocclo",
+              "Solanum multijugum",
+              "Solanum tuberosum subsp. tuberosum"
+            ],
+            "tax_sources": [
+              "ncbi:4113",
+              "gbif:2930262",
+              "irmng:10202886"
+            ],
+            "unique_name": "Solanum tuberosum"
+          }
+        },
+        {
+          "is_approximate_match": false,
+          "is_synonym": true,
+          "matched_name": "Solanum tuberosum",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "solanum tuberosum",
+          "taxon": {
+            "flags": [
+              "sibling_higher"
+            ],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Solanum etuberosum",
+            "ott_id": 661308,
+            "rank": "species",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Solanum bustillosii",
+              "Solanum etuberosum antucense",
+              "Solanum etuberosum bustillosii",
+              "Solanum etuberosum chillanense",
+              "Solanum kunzei",
+              "Solanum looseri",
+              "Solanum subandinum",
+              "Solanum tuberosum",
+              "Solanum tuberosum polemoniifolium"
+            ],
+            "tax_sources": [
+              "ncbi:200525",
+              "gbif:2930259"
+            ],
+            "unique_name": "Solanum etuberosum"
+          }
+        },
+        {
+          "is_approximate_match": false,
+          "is_synonym": true,
+          "matched_name": "Solanum tuberosum",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "solanum tuberosum",
+          "taxon": {
+            "flags": [
+              "sibling_higher"
+            ],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Solanum maglia",
+            "ott_id": 598927,
+            "rank": "species",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Solanum collinum",
+              "Solanum commersonii glabriusculum",
+              "Solanum foncki",
+              "Solanum maglia brevifrons",
+              "Solanum maglia collinum",
+              "Solanum maglia witasekianum",
+              "Solanum tuberosum",
+              "Solanum tuberosum maglia"
+            ],
+            "tax_sources": [
+              "ncbi:172791",
+              "gbif:2931694"
+            ],
+            "unique_name": "Solanum maglia"
+          }
+        }
+      ],
+      "name": "solanum tuberosum"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Poaceae",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "poaceae",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Poaceae",
+            "ott_id": 508090,
+            "rank": "family",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Aegilopaceae",
+              "Agrostidaceae",
+              "Alopecuraceae",
+              "Andropogonaceae",
+              "Anomochloaceae",
+              "Anthoxanthaceae",
+              "Arundinaceae",
+              "Arundinellaceae",
+              "Asperellaceae",
+              "Avenaceae",
+              "Bambusaceae",
+              "Cenchrinaceae",
+              "Chaeturaceae",
+              "Chloridaceae",
+              "Coleanthaceae",
+              "Cynodontaceae",
+              "Cynosuraceae",
+              "Echinariaceae",
+              "Ehrhartaceae",
+              "Eragrostidaceae",
+              "Festucaceae",
+              "Glyceriaceae",
+              "Gramineae",
+              "Hordeaceae",
+              "Lepturaceae",
+              "Miliaceae",
+              "Ophiuraceae",
+              "Oryzaceae",
+              "Panicaceae",
+              "Pappophoraceae",
+              "Parianaceae",
+              "Paspalaceae",
+              "Phalaridaceae",
+              "Pharaceae",
+              "Sporobolaceae",
+              "Stipaceae",
+              "Streptochaetaceae",
+              "Triticaceae",
+              "Zoysiaceae"
+            ],
+            "tax_sources": [
+              "ncbi:4479",
+              "worms:234036",
+              "gbif:3073",
+              "irmng:114385"
+            ],
+            "unique_name": "Poaceae"
+          }
+        }
+      ],
+      "name": "poaceae"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": true,
+          "is_synonym": false,
+          "matched_name": "Nana",
+          "nomenclature_code": "ICZN",
+          "score": 0.75,
+          "search_string": "nan",
+          "taxon": {
+            "flags": [
+              "sibling_higher"
+            ],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Tritia",
+            "ott_id": 162242,
+            "rank": "genus",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Amycla",
+              "Amyclina",
+              "Cencus",
+              "Cryptonassarius",
+              "Cyclocyrtia",
+              "Cyclonassa",
+              "Cyclope",
+              "Cyclops",
+              "Fackia",
+              "Gussonea",
+              "Hima",
+              "Hinia",
+              "Ilyanassa",
+              "Mirua",
+              "Nana",
+              "Nanina",
+              "Nannia",
+              "Naytiopsis",
+              "Neritula",
+              "Panormella",
+              "Parcanassa",
+              "Proneritula",
+              "Sphaeronassa",
+              "Tarazeuxis",
+              "Telasco",
+              "Tritonella",
+              "Utiza",
+              "Uzita"
+            ],
+            "tax_sources": [
+              "worms:246140",
+              "ncbi:1912890",
+              "gbif:3243475",
+              "gbif:4368236",
+              "irmng:1450419",
+              "irmng:1369417",
+              "irmng:1204732"
+            ],
+            "unique_name": "Tritia"
+          }
+        },
+        {
+          "is_approximate_match": true,
+          "is_synonym": false,
+          "matched_name": "Nat",
+          "nomenclature_code": "ICZN",
+          "score": 0.6666666865348816,
+          "search_string": "nan",
+          "taxon": {
+            "flags": [
+              "hidden",
+              "barren",
+              "sibling_higher"
+            ],
+            "is_suppressed": true,
+            "is_suppressed_from_synth": true,
+            "name": "Nat",
+            "ott_id": 4616842,
+            "rank": "genus",
+            "source": "ott3.6draft1",
+            "synonyms": [],
+            "tax_sources": [
+              "irmng:1271313"
+            ],
+            "unique_name": "Nat"
+          }
+        }
+      ],
+      "name": "nan"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Triticum aestivum",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "triticum aestivum",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Triticum aestivum",
+            "ott_id": 31926,
+            "rank": "species",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Triticum aestivum subsp. aestivum",
+              "Triticum aestivum vulgare",
+              "Triticum amplissimum",
+              "Triticum aristatum",
+              "Triticum aristatum aestivum",
+              "Triticum cereale aestivum",
+              "Triticum estivum",
+              "Triticum hybernum",
+              "Triticum macha",
+              "Triticum sativum",
+              "Triticum sativum aestivum",
+              "Triticum sativum sinense",
+              "Triticum sativum vulgare",
+              "Triticum sphaerococcum",
+              "Triticum touzelle",
+              "Triticum vulgare",
+              "Triticum vulgare aestivum",
+              "Triticum vulgare aristatum",
+              "Triticum vulgare sativum"
+            ],
+            "tax_sources": [
+              "ncbi:4565",
+              "gbif:7541363",
+              "gbif:7795888",
+              "irmng:11133543"
+            ],
+            "unique_name": "Triticum aestivum"
+          }
+        }
+      ],
+      "name": "triticum aestivum"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Papaver",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "papaver",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Papaver",
+            "ott_id": 438123,
+            "rank": "genus",
+            "source": "ott3.6draft1",
+            "synonyms": [],
+            "tax_sources": [
+              "ncbi:3468",
+              "gbif:2888431",
+              "irmng:1019682"
+            ],
+            "unique_name": "Papaver"
+          }
+        }
+      ],
+      "name": "papaver"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Euphorbia",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "euphorbia",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Euphorbia",
+            "ott_id": 109494,
+            "rank": "genus",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Ademo",
+              "Adenopetalum",
+              "Adenorima",
+              "Aemaralmeida",
+              "Agaloma",
+              "Aklema",
+              "Alectoroctonum",
+              "Allobia",
+              "Anisophyllum",
+              "Anthacantha",
+              "Aplarina",
+              "Arthrothamnus",
+              "Athymalus",
+              "Bojeria",
+              "Ceraselma",
+              "Chamaesyce",
+              "Characias",
+              "Chylogala",
+              "Crepidaria",
+              "Ctenadena",
+              "Cubanthus",
+              "Cyathophora",
+              "Cystidospermum",
+              "Dactylanthes",
+              "Dematra",
+              "Desmonema",
+              "Diadenaria",
+              "Dichrophyllum",
+              "Dichylium",
+              "Diplocyathium",
+              "Ditrita",
+              "Ditritea",
+              "Ditritra",
+              "Elaeophorbia",
+              "Endadenium",
+              "Endoisila",
+              "Epurga",
+              "Esula",
+              "Euforbia",
+              "Eumecanthus",
+              "Euphorbi",
+              "Euphorbiastrum",
+              "Euphorbiodendron",
+              "Euphorbion",
+              "Euphorbiopsis",
+              "Euphorbium",
+              "Galarhoeus",
+              "Galorhoeus",
+              "Hexadenia",
+              "Kanopikon",
+              "Keraselma",
+              "Kobiosis",
+              "Lacanthis",
+              "Lathyris",
+              "Lepadena",
+              "Leptopus",
+              "Lophobios",
+              "Lortia",
+              "Lyciopsis",
+              "Medusea",
+              "Monadenium",
+              "Murtekias",
+              "Nisomenes",
+              "Ossifraga",
+              "Peccana",
+              "Pedilanthus",
+              "Petalandra",
+              "Pleuradena",
+              "Poinsettia",
+              "Pythius",
+              "Sclerocyathium",
+              "Stenadenium",
+              "Sterigmanthe",
+              "Synadenium",
+              "Tirucalia",
+              "Tirucallia",
+              "Tithymalodes",
+              "Tithymaloides",
+              "Tithymalopsis",
+              "Tithymalus",
+              "Torfasadis",
+              "Torfasidis",
+              "Treisia",
+              "Tricherostigma",
+              "Trichosterigma",
+              "Tumalis",
+              "Vallaris",
+              "Ventenatia",
+              "Xamesike",
+              "Zalitea",
+              "Zygophyllidium"
+            ],
+            "tax_sources": [
+              "ncbi:3990",
+              "worms:246823",
+              "gbif:3063749",
+              "irmng:1323584",
+              "irmng:1075345",
+              "irmng:1081289",
+              "irmng:1078727",
+              "irmng:1339378",
+              "irmng:1275700",
+              "irmng:1099829"
+            ],
+            "unique_name": "Euphorbia"
+          }
+        }
+      ],
+      "name": "euphorbia"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Notiophilus",
+          "nomenclature_code": "ICZN",
+          "score": 1.0,
+          "search_string": "notiophilus",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Notiophilus",
+            "ott_id": 9996,
+            "rank": "genus",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Latviaphilus",
+              "Makarovius",
+              "Natiophilus",
+              "Nothiophilus",
+              "Othiophilus"
+            ],
+            "tax_sources": [
+              "ncbi:41307",
+              "worms:426326",
+              "gbif:1247492",
+              "irmng:1298608"
+            ],
+            "unique_name": "Notiophilus"
+          }
+        },
+        {
+          "is_approximate_match": false,
+          "is_synonym": true,
+          "matched_name": "Notiophilus",
+          "nomenclature_code": "ICZN",
+          "score": 1.0,
+          "search_string": "notiophilus",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Notiodes",
+            "ott_id": 4605081,
+            "rank": "genus",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Endalus",
+              "Endatus",
+              "Eudalus",
+              "Notionomus",
+              "Notiophilus"
+            ],
+            "tax_sources": [
+              "ncbi:1514656",
+              "gbif:1247812",
+              "irmng:1410070"
+            ],
+            "unique_name": "Notiodes"
+          }
+        }
+      ],
+      "name": "notiophilus"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": true,
+          "matched_name": "Angiospermae",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "angiospermae",
+          "taxon": {
+            "flags": [
+              "sibling_higher"
+            ],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Magnoliopsida",
+            "ott_id": 99252,
+            "rank": "class",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Angiospermae",
+              "Magnoliophyta"
+            ],
+            "tax_sources": [
+              "ncbi:3398",
+              "worms:182757",
+              "gbif:220",
+              "irmng:1102"
+            ],
+            "unique_name": "Magnoliopsida"
+          }
+        }
+      ],
+      "name": "angiospermae"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Veronica hederifolia",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "veronica hederifolia",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Veronica hederifolia",
+            "ott_id": 502001,
+            "rank": "species",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Veronica hederaefolia"
+            ],
+            "tax_sources": [
+              "ncbi:202477",
+              "gbif:8894657",
+              "gbif:3172070",
+              "irmng:11349054"
+            ],
+            "unique_name": "Veronica hederifolia"
+          }
+        }
+      ],
+      "name": "veronica hederifolia"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Capsella bursa-pastoris",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "capsella bursa-pastoris",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Capsella bursa-pastoris",
+            "ott_id": 833644,
+            "rank": "species",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "? alandica",
+              "? belgica",
+              "? segetum",
+              "? viminalis",
+              "Bursa alpestris",
+              "Bursa bursa-pastoris",
+              "Bursa bursa-pastoris bifida",
+              "Bursa djurdjurae",
+              "Bursa djurjurae",
+              "Bursa fracticruris",
+              "Bursa gracilis",
+              "Bursa grandiflora",
+              "Bursa nana",
+              "Bursa occidentalis",
+              "Bursa orientalis",
+              "Bursa pastoris",
+              "Bursa penarthae",
+              "Bursa rubella",
+              "Bursa tuscaloosae",
+              "Bursa viguieri",
+              "Capsella agrestis",
+              "Capsella alpestris",
+              "Capsella apetala",
+              "Capsella batavorum",
+              "Capsella bursa-pastoris alpestris",
+              "Capsella bursa-pastoris bifida",
+              "Capsella bursa-pastoris bursa-pastoris",
+              "Capsella bursa-pastoris eu-bursa",
+              "Capsella bursa-pastoris integrifolia",
+              "Capsella bursa-pastoris minor",
+              "Capsella bursa-pastoris minuta",
+              "Capsella bursa-pastoris occidentalis",
+              "Capsella concava",
+              "Capsella heegeri",
+              "Capsella hyrcana",
+              "Capsella lycia",
+              "Capsella mediterranea",
+              "Capsella patagonica",
+              "Capsella penarthae",
+              "Capsella polymorpha",
+              "Capsella rubella",
+              "Capsella ruderalis",
+              "Capsella stenocarpa",
+              "Capsella thomsonii",
+              "Capsella treviorum",
+              "Capsella turoniensis",
+              "Capsella viguieri",
+              "Iberis bursa-pastoris",
+              "Lepidium bursa-pastoris",
+              "Nasturtium bursa-pastoris",
+              "Roschiedia bursa-pastoris",
+              "Solmsiella heegeri",
+              "Thlaspi bursa-pastoris",
+              "Thlaspi bursa-pastoris integrifolium",
+              "Thlaspi burseta",
+              "Thlaspi hirtum"
+            ],
+            "tax_sources": [
+              "ncbi:3719",
+              "worms:993761",
+              "gbif:5375388",
+              "irmng:10588950"
+            ],
+            "unique_name": "Capsella bursa-pastoris"
+          }
+        }
+      ],
+      "name": "capsella bursa-pastoris"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Cerastium fontanum",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "cerastium fontanum",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Cerastium fontanum",
+            "ott_id": 625399,
+            "rank": "species",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Cerastium adsurgens",
+              "Cerastium holosteoides",
+              "Cerastium triviale",
+              "Cerastium triviale alpinum",
+              "Cerastium vulgatum"
+            ],
+            "tax_sources": [
+              "ncbi:230722",
+              "worms:458706",
+              "gbif:3085458",
+              "irmng:11088636"
+            ],
+            "unique_name": "Cerastium fontanum"
+          }
+        }
+      ],
+      "name": "cerastium fontanum"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Deroceras",
+          "nomenclature_code": "ICZN",
+          "score": 1.0,
+          "search_string": "deroceras",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Deroceras",
+            "ott_id": 518943,
+            "rank": "genus",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Agricolimax",
+              "Agriolimax",
+              "Agriolimox",
+              "Arctolimax",
+              "Chorolimax",
+              "Hydrolimax",
+              "Malino",
+              "Nipponolimax",
+              "Plathystimulus"
+            ],
+            "tax_sources": [
+              "worms:818211",
+              "ncbi:145609",
+              "gbif:5190776",
+              "irmng:1395476",
+              "irmng:1006903",
+              "irmng:1207850"
+            ],
+            "unique_name": "Deroceras"
+          }
+        }
+      ],
+      "name": "deroceras"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Veronica",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "veronica",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Veronica",
+            "ott_id": 507032,
+            "rank": "genus",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Beccabunga",
+              "Besseya",
+              "Chionohebe",
+              "Cochlidiosperma",
+              "Derwentia",
+              "Detzneria",
+              "Diplophyllum",
+              "Hebe",
+              "Hebejeebie",
+              "Heliohebe",
+              "Heohebe",
+              "Leonohebe",
+              "Lunellia",
+              "Macrostemon",
+              "Odicardis",
+              "Oligospermum",
+              "Parahebe",
+              "Pseudolysimachion",
+              "Pygmea"
+            ],
+            "tax_sources": [
+              "ncbi:4173",
+              "worms:993896",
+              "gbif:3172047",
+              "irmng:1381293",
+              "irmng:1073912",
+              "irmng:1282418",
+              "irmng:1364735",
+              "irmng:1057809"
+            ],
+            "unique_name": "Veronica"
+          }
+        }
+      ],
+      "name": "veronica"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "life",
+          "nomenclature_code": "undefined",
+          "score": 1.0,
+          "search_string": "life",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "life",
+            "ott_id": 805080,
+            "rank": "no rank",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "all"
+            ],
+            "tax_sources": [
+              "silva:0",
+              "ncbi:1",
+              "gbif:0",
+              "irmng:0"
+            ],
+            "unique_name": "life"
+          }
+        }
+      ],
+      "name": "life"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Euphorbia helioscopia",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "euphorbia helioscopia",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Euphorbia helioscopia",
+            "ott_id": 46554,
+            "rank": "species",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Euphorbia dominii",
+              "Euphorbia helioscopioides",
+              "Euphorbion helioscopium",
+              "Galarhoeus helioscopius",
+              "Tithymalus dominii",
+              "Tithymalus helioscopioides",
+              "Tithymalus helioscopius",
+              "Tithymalus obovata",
+              "Tithymalus serratus"
+            ],
+            "tax_sources": [
+              "ncbi:154990",
+              "gbif:3066367",
+              "irmng:11111001"
+            ],
+            "unique_name": "Euphorbia helioscopia"
+          }
+        }
+      ],
+      "name": "euphorbia helioscopia"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Cynara",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "cynara",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Cynara",
+            "ott_id": 991883,
+            "rank": "genus",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Arcyna",
+              "Bourgaea",
+              "Cynaropsis"
+            ],
+            "tax_sources": [
+              "ncbi:4264",
+              "gbif:3112344",
+              "irmng:1311602",
+              "irmng:1353035",
+              "irmng:1368560"
+            ],
+            "unique_name": "Cynara"
+          }
+        }
+      ],
+      "name": "cynara"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Poa annua",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "poa annua",
+          "taxon": {
+            "flags": [
+              "sibling_higher"
+            ],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Poa annua",
+            "ott_id": 510850,
+            "rank": "species",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Aira pumila",
+              "Catabrosa pumila",
+              "Festuca tenuiculmis",
+              "Ochlopoa annua",
+              "Ochlopoa annua notabilis",
+              "Ochlopoa annua pilantha",
+              "Ochlopoa annua raniglumis",
+              "Ochlopoa raniglumis",
+              "Poa aestivalis",
+              "Poa algida",
+              "Poa annua aquatica",
+              "Poa annua crispa",
+              "Poa annua erecta",
+              "Poa annua eriolepis",
+              "Poa annua notabilis",
+              "Poa annua ovalis",
+              "Poa annua pilantha",
+              "Poa annua purpurea",
+              "Poa annua raniglumis",
+              "Poa annua reptans",
+              "Poa annua rigidiuscula",
+              "Poa annua rubra",
+              "Poa annua sericea",
+              "Poa annua vivipara",
+              "Poa bipollicaris",
+              "Poa hansiana",
+              "Poa hohenackeri",
+              "Poa humilis",
+              "Poa meyenii",
+              "Poa ovalis",
+              "Poa portalii",
+              "Poa puberula",
+              "Poa trivialis hohenackeri",
+              "Poa variegata"
+            ],
+            "tax_sources": [
+              "ncbi:93036",
+              "worms:993880",
+              "gbif:2704179",
+              "irmng:10589082"
+            ],
+            "unique_name": "Poa annua"
+          }
+        },
+        {
+          "is_approximate_match": false,
+          "is_synonym": true,
+          "matched_name": "Poa annua",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "poa annua",
+          "taxon": {
+            "flags": [
+              "sibling_higher"
+            ],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Poa infirma",
+            "ott_id": 254228,
+            "rank": "species",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Atropis thomsonii",
+              "Catabrosa thomsonii",
+              "Colpodium thomsonii",
+              "Eragrostis infirma",
+              "Glyceria thomsonii",
+              "Megastachya infirma",
+              "Ochlopoa infirma",
+              "Ochlopoa perinconspicua",
+              "Poa annua",
+              "Poa annua exilis",
+              "Poa annua laxiflora",
+              "Poa annua plicata",
+              "Poa annua remotiflora",
+              "Poa annua tommasinii",
+              "Poa exilis",
+              "Poa inconspicua",
+              "Poa perinconspicua",
+              "Poa remotiflora",
+              "Puccinellia thomsonii"
+            ],
+            "tax_sources": [
+              "ncbi:165094",
+              "gbif:2704194",
+              "irmng:10696026"
+            ],
+            "unique_name": "Poa infirma"
+          }
+        }
+      ],
+      "name": "poa annua"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Annelida",
+          "nomenclature_code": "ICZN",
+          "score": 1.0,
+          "search_string": "annelida",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Annelida",
+            "ott_id": 941620,
+            "rank": "phylum",
+            "source": "ott3.6draft1",
+            "synonyms": [],
+            "tax_sources": [
+              "ncbi:6340",
+              "worms:882",
+              "gbif:42",
+              "irmng:234"
+            ],
+            "unique_name": "Annelida"
+          }
+        }
+      ],
+      "name": "annelida"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Coleoptera",
+          "nomenclature_code": "ICZN",
+          "score": 1.0,
+          "search_string": "coleoptera",
+          "taxon": {
+            "flags": [
+              "sibling_higher"
+            ],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Coleoptera",
+            "ott_id": 865243,
+            "rank": "order",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Elateridopsidae",
+              "Eutactus",
+              "Ibidiomorphum",
+              "Macropterum",
+              "Natomelus",
+              "Traulotes"
+            ],
+            "tax_sources": [
+              "ncbi:7041",
+              "worms:118085",
+              "gbif:1470",
+              "irmng:10279"
+            ],
+            "unique_name": "Coleoptera"
+          }
+        }
+      ],
+      "name": "coleoptera"
+    },
+    {
+      "matches": [
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Pterygota",
+          "nomenclature_code": "ICN",
+          "score": 1.0,
+          "search_string": "pterygota",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Pterygota",
+            "ott_id": 793343,
+            "rank": "genus",
+            "source": "ott3.6draft1",
+            "synonyms": [
+              "Basiloxylon",
+              "Tetradia"
+            ],
+            "tax_sources": [
+              "ncbi:300552",
+              "gbif:9502664",
+              "irmng:1291338"
+            ],
+            "unique_name": "Pterygota (genus in kingdom Archaeplastida)"
+          }
+        },
+        {
+          "is_approximate_match": false,
+          "is_synonym": false,
+          "matched_name": "Pterygota",
+          "nomenclature_code": "ICZN",
+          "score": 1.0,
+          "search_string": "pterygota",
+          "taxon": {
+            "flags": [],
+            "is_suppressed": false,
+            "is_suppressed_from_synth": false,
+            "name": "Pterygota",
+            "ott_id": 1048707,
+            "rank": "subclass",
+            "source": "ott3.6draft1",
+            "synonyms": [],
+            "tax_sources": [
+              "ncbi:7496",
+              "worms:151152"
+            ],
+            "unique_name": "Pterygota (subclass in Opisthokonta)"
+          }
+        }
+      ],
+      "name": "pterygota"
+    }
+  ],
+  "taxonomy": {
+    "author": "open tree of life project",
+    "name": "ott",
+    "source": "ott3.6draft1",
+    "version": "3.6",
+    "weburl": "https://tree.opentreeoflife.org/about/taxonomy-version/ott3.6"
+  },
+  "unambiguous_names": [
+    "arion",
+    "solanum tuberosum",
+    "poaceae",
+    "triticum aestivum",
+    "papaver",
+    "euphorbia",
+    "notiophilus",
+    "veronica hederifolia",
+    "capsella bursa-pastoris",
+    "cerastium fontanum",
+    "deroceras",
+    "veronica",
+    "life",
+    "euphorbia helioscopia",
+    "cynara",
+    "poa annua",
+    "annelida",
+    "coleoptera"
+  ],
+  "unmatched_names": []
+}
