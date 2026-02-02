@@ -194,8 +194,9 @@ df_organism_tnrs_matched_unique = df_organism_tnrs_matched.drop_duplicates('sear
 # both df are finally merged
 merged_df = pd.merge(species_list_df, df_organism_tnrs_matched_unique, how='left', left_on=org_column_header, right_on='search_string', indicator=True)
 
-# Duplicate are droppes
+# Duplicate are dropped
 merged_df.drop_duplicates(subset=['source_taxon', 'matched_name', 'taxon.ott_id'], keep='first', inplace=True, ignore_index=False)
+
 # and nan also
 
 merged_df.dropna(subset=['matched_name'], inplace = True)
